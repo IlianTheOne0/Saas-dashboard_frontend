@@ -2,14 +2,17 @@ import KAFKA_CONFIG from "../../assets/data/kafka/kafka.config";
 
 const producerService =
 {
-	sendData: async (message) =>
+	sendData: async (message, topic) =>
 	{
-		const url = `${KAFKA_CONFIG.BASE_URL}/topics/${KAFKA_CONFIG.TOPIC_PRODUCE_NAME}`;
-
-		const payload = { records: [{ value: message }] };
-
 		try
 		{
+			const targetTopic = topic;
+			if (!targetTopic) { throw new Error("Target topic is required to send message"); }
+
+			const url = `${KAFKA_CONFIG.BASE_URL}/topics/${targetTopic}`;
+
+			const payload = { records: [{ value: message }] };
+			
 			const response = await fetch
 			(
 				url,
