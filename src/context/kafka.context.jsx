@@ -3,7 +3,7 @@ import { createContext, useState, useRef, useCallback, useEffect } from 'react';
 import { producerService } from '../services/kafka/producer';
 import { consumerService } from '../services/kafka/consumer';
 
-import KAFKA_CONFIG from '../assets/data/kafka/kafka.config';
+import KAFKA_CONFIG from '../config/kafka.config';
 
 const KafkaContext = createContext(null);
 

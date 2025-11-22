@@ -1,0 +1,30 @@
+.features-tests-kafka .producer
+{
+	margin-bottom: 20px;
+}
+
+.features-tests-kafka .producer .form-group
+{
+	margin-bottom: 10px;
+}
+
+.features-tests-kafka .producer .textarea
+{
+	width: 100%;
+	height: 80px;
+}
+
+.features-tests-kafka .producer .produce-status
+{
+	margin-left: 10px;
+}
+
+.features-tests-kafka .producer .produce-status.success
+{
+	color: green;
+}
+
+.features-tests-kafka .producer .produce-status.error
+{
+	color: red;
+}

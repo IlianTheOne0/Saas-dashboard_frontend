@@ -1,0 +1,48 @@
+.features-tests-kafka .consumer
+{
+	margin-top: 20px;
+}
+
+.features-tests-kafka .consumer .error
+{
+	color: red;
+}
+
+.features-tests-kafka .consumer .controls
+{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	margin-bottom: 10px;
+}
+
+.features-tests-kafka .consumer .message-log
+{
+	height: 200px;
+	
+	margin: 0;
+	padding: 10px;
+	
+	background-color: #f9f9f9;
+	
+	border: 1px solid #ccc;
+	
+	overflow-y: scroll;
+	list-style-type: none;
+}
+
+.features-tests-kafka .consumer .message-log-item
+{
+	margin: 5px 0;
+	padding: 5px;
+
+	background: #f4f4f4;
+	
+	border-left: 4px solid #007bff;
+}
+
+.features-tests-kafka .consumer .message-log-item .small
+{
+	color: #666;
+}

@@ -1,0 +1,14 @@
+@import url("producer.css");
+@import url("consumer.css");
+
+.features-tests-kafka
+{
+	padding: 20px;
+}
+
+.features-tests-kafka .container
+{
+	padding: 10px;
+	
+	border: 1px solid #ccc;
+}

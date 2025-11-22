@@ -1,4 +1,4 @@
-import KAFKA_CONFIG from "../../assets/data/kafka/kafka.config";
+import KAFKA_CONFIG from "../../config/kafka.config";
 
 class ConsumerService
 {

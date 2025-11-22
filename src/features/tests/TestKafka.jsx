@@ -2,7 +2,9 @@ import { useMemo, useState } from "react";
 
 import { useKafka } from "../../hooks/useKafka";
 
-import KAFKA_CONFIG from "../../assets/data/kafka/kafka.config";
+import KAFKA_CONFIG from "../../config/kafka.config";
+
+import "../../assets/styles/features/tests/TestKafka/TestKafka.css";
 
 function KafkaServiceTest()
 {
@@ -16,31 +18,30 @@ function KafkaServiceTest()
 	const handleSendMessage = async () => { sendMessage(messageInput, targetTopic); setMessageInput(""); };
 
 	return (
-		<div style={{padding: "20px"}}>
+		<div className="features-tests-kafka">
 			<h1>Kafka Integration Test</h1>
 
-			<div style={{border: "1px solid #ccc", padding: "10px", marginBottom: "20px"}}>
+			<div className="container producer">
                 <h2>1. Producer</h2>
                 
-				<div style={{marginBottom: "10px"}}>
+				<div className="form-group">
 					<label>Target Topic: </label>
 					<select onChange={(event) => setTargetTopic(event.target.value)} value={targetTopic}>
 						{KAFKA_CONFIG.TOPICS_PRODUCE_NAMES.map(topic => <option key={topic} value={topic}>{topic}</option>)}
 					</select>
 				</div>
-                <textarea style={{width: "100%", height: "80px"}} value={messageInput} onChange={event => setMessageInput(event.target.value)} placeholder='Enter message here...'/>
+                <textarea className="textarea" value={messageInput} onChange={event => setMessageInput(event.target.value)} placeholder='Enter message here...'/>
 
                 <button onClick={handleSendMessage} disabled={!messageInput || isSending}>{isSending ? "Sending..." : "Send Message"}</button>
-                { produceStatus && <span style={{marginLeft: "10px", color: produceStatus.success ? "green" : "red"}}>{produceStatus.message}</span> }
+                { produceStatus && <span className={`produce-status ${produceStatus.success ? "success" : "error"}`}>{produceStatus.message}</span> }
             </div>
-
-			<div style={{border: "1px solid #ccc", padding: "10px"}}>
+			<div className="container consumer">
                 <h2>2. Consumer</h2>
                 
 				<p>Status: <b>{status}</b></p>
-                { error && <p style={{color: "red"}}>{error}</p> }
+                { error && <p className="error">{error}</p> }
 
-                <div style={{display: "flex", gap: "10px", marginBottom: "10px", alignItems: "center"}}>
+                <div className="controls">
                     <button onClick={() => clearMessages()}>Clear Log</button>
                 
                     <label>Filter View:</label>
@@ -50,7 +51,7 @@ function KafkaServiceTest()
                     </select>
                 </div>
 
-                <ul>
+                <ul className="message-log">
                     {displayedMessages.length === 0 && <li>No messages found.</li>}
                     
                     {
@@ -58,8 +59,8 @@ function KafkaServiceTest()
 						(
 							(message, index) =>
 							(
-								<li key={index} style={{ background: "#f4f4f4", margin: "5px 0", padding: "5px", borderLeft: "4px solid #007bff" }}>
-									<small style={{color: "#666"}}>[{message.topic}]</small><br/>
+								<li className="message-log-item" key={index}>
+									<small className="small">[{message.topic}]</small><br/>
 									<strong>Offset {message.offset}:</strong>
 									{" "}
 									{typeof message.value === "object" ? JSON.stringify(message.value) : message.value}
