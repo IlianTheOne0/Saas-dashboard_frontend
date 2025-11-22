@@ -1,7 +1,7 @@
 function Recovery()
 {
 	return (
-		null
+		undefined
 	);
 }
 

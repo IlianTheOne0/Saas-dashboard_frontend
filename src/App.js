@@ -12,10 +12,11 @@ import KafkaServiceTest from "./features/tests/TestKafka";
 
 import "./assets/styles/App.css";
 
-function ThemeToggleButton() {
+function ThemeToggleButton()
+{
 	const { toggleTheme } = useTheme();
 	
-	return (<button onClick={toggleTheme} style={{position: "absolute", top: "0", right: "0"}}>Toggle</button>);
+	return (<button onClick={toggleTheme} style={{position: "absolute", top: "0", right: "0", zIndex: "1000"}}>Toggle</button>);
 }
 
 function App()
@@ -24,7 +25,7 @@ function App()
 		<main className="app">
 			<ThemeProvider>
 				<KafkaProvider>
-					<ThemeToggleButton />
+					<ThemeToggleButton/>
 					{/*Test Components*/}
 					{/* <div>
 						<KafkaServiceTest/>
@@ -33,7 +34,7 @@ function App()
 					<Routes>
 						<Route path="/" element={<Navigate to="auth/login" replace/>}/>
 
-						<Route path="auth">
+						<Route path="auth" element={<AuthLayout/>}>
 							<Route path="login" element={<AuthPages.Login/>}/>
 							<Route path="register" element={<AuthPages.Register/>}/>
 							<Route path="recovery" element={<AuthPages.Recovery/>}/>

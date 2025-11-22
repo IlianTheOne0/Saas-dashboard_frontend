@@ -5,4 +5,4 @@ import Recovery from "./pages/Recovery";
 const AuthPages = { Login, Register, Recovery };
 
 export { AuthPages };
-export { default as AuthLayout } from "./components/AuthLayout";
+export { default as AuthLayout } from "./components/Layout";

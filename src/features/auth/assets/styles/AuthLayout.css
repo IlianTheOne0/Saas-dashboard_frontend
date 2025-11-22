@@ -1,0 +1,86 @@
+.auth-layout
+{
+	width: 100vw;
+	height: 100vh;
+
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.auth-layout::after
+{
+	content: "";
+
+	width: 100vw;
+	height: 100vh;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	z-index: -1; 
+}
+
+.auth-layout.light::after
+{
+	background-color: rgba(30, 31, 32, 0.4);
+}
+.auth-layout.dark::after
+{
+	background-color: rgb(30, 31, 32, 0.6);
+}
+
+.auth-layout .main
+{
+	width: 75%;
+	height: 90%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin: auto;
+
+	border-radius: 32px;
+}
+
+.auth-layout.light .main
+{
+	background-color: rgb(255, 255, 255);
+}
+
+.auth-layout.dark .main
+{
+	background-color: rgb(30, 31, 32);
+}
+
+.auth-layout .left-side .icon-full
+{
+	margin-bottom: 52px;
+}
+
+@media (max-width: 429px)
+{
+	.auth-layout .main
+	{
+		width: 100%;
+		height: 60%;
+
+		position: absolute;
+		bottom: 0;
+
+		border-radius: 32px 32px 0 0;
+	}
+
+	.auth-layout .left-side .icon-full
+	{
+		width: 110px;
+		height: 48px;
+
+		position: absolute;
+		top: -125px;
+		left: calc(50% - (110px / 2));
+	}
+}

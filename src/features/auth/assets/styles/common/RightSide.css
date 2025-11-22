@@ -1,0 +1,69 @@
+.auth-layout .right-side
+{
+	width: 50%;
+	height: 100%;
+
+	padding: 180px 120px 0 128px;
+
+	border-radius: 0 32px 32px 0;
+}
+
+.auth-layout.light .right-side
+{
+	background-color: rgb(242, 243, 247)
+}
+
+.auth-layout.dark .right-side
+{
+	background-color: rgb(53, 54, 58);
+}
+
+.auth-layout .right-side .user-icon
+{
+	width: 120px;
+	height: 120px;
+}
+
+.auth-layout .right-side .title
+{
+	margin: 40px 0;
+
+	font-family: "FC-Bold", Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	line-height: 36px;
+}
+
+.auth-layout.light .right-side .title
+{
+	color: rgb(30, 31, 32);
+}
+
+.auth-layout.dark .right-side .title
+{
+	color: rgb(255, 255, 255);
+}
+
+.auth-layout .right-side .subtitle
+{
+	font-family: "FC-Medium", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.auth-layout.light .right-side .subtitle
+{
+	color: rgb(127, 133, 162);
+}
+
+.auth-layout.dark .right-side .subtitle
+{
+	color: rgb(190, 194, 208);
+}
+
+@media (max-width: 429px)
+{
+	.auth-layout .right-side
+	{
+		display: none;
+	}
+}
