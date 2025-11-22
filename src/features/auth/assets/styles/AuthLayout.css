@@ -74,6 +74,11 @@
 		border-radius: 32px 32px 0 0;
 	}
 
+	.auth-layout.recovery .main
+	{
+		height: 45%;
+	}
+
 	.auth-layout .left-side .icon-full
 	{
 		width: 110px;

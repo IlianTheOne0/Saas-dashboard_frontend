@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import CommonInput from "../components/common/CommonInput";
@@ -11,7 +11,7 @@ import IconCorrectCircle from "../../../assets/images/icons/common/Correct-Circl
 import IconIncorrectCircle from "../../../assets/images/icons/common/Incorrect-Circle.svg"
 import IconEye from "../../../assets/images/icons/common/Eye.svg"
 
-import "../assets/styles/Login.css"
+import "../assets/styles/pages/Login.css";
 
 function Login()
 {

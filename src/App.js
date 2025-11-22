@@ -11,6 +11,7 @@ import { AuthLayout, AuthPages } from "./features/auth/index";
 import KafkaServiceTest from "./features/tests/TestKafka";
 
 import "./assets/styles/App.css";
+import { cookies } from "./utils/cookies";
 
 function ThemeToggleButton()
 {
@@ -21,6 +22,7 @@ function ThemeToggleButton()
 
 function App()
 {
+	console.log(cookies.get("theme"));
 	return (
 		<main className="app">
 			<ThemeProvider>

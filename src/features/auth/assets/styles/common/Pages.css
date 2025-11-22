@@ -94,43 +94,6 @@
 	margin-top: 30px;
 }
 
-.auth-layout .left-side .buttons-container .login-button:hover,
-.auth-layout .left-side .buttons-container .create-account-button:hover
-{
-	transition: background-color 0.2s ease-in-out;
-}
-
-.auth-layout .left-side .buttons-container .login-button:hover
-{
-	background-color: rgba(62, 107, 236, 0.8) !important;
-}
-
-.auth-layout .left-side .buttons-container .create-account-button:hover
-{
-	background-color: rgba(127, 133, 162, 0.2) !important;
-}
-
-.auth-layout.light .left-side .buttons-container .login-button,
-.auth-layout.dark .left-side .buttons-container .login-button
-{
-	background-color: rgb(62, 107, 236);
-	color: rgb(255, 255, 255);
-}
-
-.auth-layout.light .left-side .buttons-container .create-account-button
-{
-	color: rgb(30, 31, 32);
-
-	border: 2px solid rgba(127, 133, 162, 0.2);
-}
-
-.auth-layout.dark .left-side .buttons-container .create-account-button
-{
-	color: rgb(255, 255, 255);
-
-	border: 2px solid rgba(127, 133, 162, 0.4);
-}
-
 @media (max-width: 429px)
 {
 	.auth-layout .left-side

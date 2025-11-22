@@ -1,7 +1,7 @@
 function Register()
 {
 	return (
-		null
+		undefined
 	);
 }
 

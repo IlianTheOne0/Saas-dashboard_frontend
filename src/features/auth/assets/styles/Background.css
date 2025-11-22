@@ -20,4 +20,9 @@
 	{
 		height: 331px;
 	}
+
+	.auth-layout.recovery .background-img.recovery
+	{
+		height: 500px;
+	}
 }
