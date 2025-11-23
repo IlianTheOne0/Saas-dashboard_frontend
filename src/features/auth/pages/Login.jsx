@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import CommonInput from "../components/common/CommonInput";
 import CommonButton from "../components/common/CommonButton";
@@ -15,9 +15,10 @@ import "../assets/styles/pages/Login.css";
 
 function Login()
 {
+	const location = useLocation();
 	const navigate = useNavigate();
 	
-	const [email, setEmail] = useState("");
+	const [email, setEmail] = useState(location.state?.email || "");
 	const [password, setPassword] = useState("");
 
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -43,8 +44,9 @@ function Login()
 
 	const passwordIconClickHandler = () => { console.log("asdasd"); setIsPasswordVisible(!isPasswordVisible); };
 
-	const navigateToRegister = useCallback(() => { navigate("/auth/register", {email: email }); }, [email]);
-	const navigateToRecovery = useCallback(() => { navigate("/auth/recovery", {email: email }); }, [email]);
+	const navigateFirstCheck = () => { if (emailValidator(email)) { return { state: { email } }; } }
+	const navigateToRegister = useCallback(() => { navigate("/auth/register", navigateFirstCheck()); }, [email]);
+	const navigateToRecovery = useCallback(() => { navigate("/auth/recovery", navigateFirstCheck()); }, [email]);
 
 	return (
 		<>

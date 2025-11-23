@@ -21,8 +21,13 @@
 		height: 331px;
 	}
 
-	.auth-layout.recovery .background-img.recovery
+	.auth-layout.recovery .background-img
 	{
 		height: 500px;
+	}
+
+	.auth-layout.register .background-img
+	{
+		height: 250px;
 	}
 }

@@ -22,7 +22,6 @@ function ThemeToggleButton()
 
 function App()
 {
-	console.log(cookies.get("theme"));
 	return (
 		<main className="app">
 			<ThemeProvider>

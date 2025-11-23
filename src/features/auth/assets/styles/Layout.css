@@ -79,6 +79,11 @@
 		height: 45%;
 	}
 
+	.auth-layout.register .main
+	{
+		height: 70%;
+	}
+
 	.auth-layout .left-side .icon-full
 	{
 		width: 110px;

@@ -1,0 +1,37 @@
+.auth-layout.register .left-side .inputs-container
+{
+	margin-top: 20px;
+}
+
+.auth-layout.register .left-side .inputs-container
+{
+	gap: 10px;
+
+	margin-top: 20px;
+}
+
+.auth-layout.register .left-side .inputs-container.label
+{
+	margin-bottom: 0px;
+}
+
+.auth-layout.register .left-side .buttons-container
+{
+	gap: 10px;
+
+	margin-top: 20px;
+}
+
+.auth-layout.light .left-side .buttons-container .create-button,
+.auth-layout.dark .left-side .buttons-container .create-button
+{
+	background-color: rgb(253, 222, 105);
+	color: rgb(30, 31, 32);
+}
+
+.auth-layout .left-side .buttons-container .create-button:hover
+{
+	background-color: rgba(253, 222, 105, 0.8) !important;
+
+	transition: background-color 0.2s ease-in-out;
+}

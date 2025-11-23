@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { useLocation } from "react-router-dom";
 
 import CommonInput from "../components/common/CommonInput";
 import CommonButton from "../components/common/CommonButton";
@@ -13,7 +14,8 @@ import "../assets/styles/pages/Recovery.css";
 
 function Recovery()
 {	
-	const [email, setEmail] = useState("");
+	const location = useLocation();
+	const [email, setEmail] = useState(location.state?.email || "");
 
 	const emailValidator = useCallback
 	(
