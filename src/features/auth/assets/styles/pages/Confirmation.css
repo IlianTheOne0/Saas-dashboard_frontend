@@ -1,0 +1,26 @@
+.auth-layout .left-side .subtitle.success
+{
+	color: var(--success-C100) !important;
+}
+
+.auth-layout .left-side .subtitle.error
+{
+	color: var(--error-C100) !important;
+}
+
+.auth-layout .left-side .buttons-container .login-button:hover
+{
+	transition: background-color 0.2s ease-in-out;
+}
+
+.auth-layout .left-side .buttons-container .login-button:hover
+{
+	background-color: var(--primary-C80) !important;
+}
+
+.auth-layout.light .left-side .buttons-container .login-button,
+.auth-layout.dark .left-side .buttons-container .login-button
+{
+	background-color: rgb(62, 107, 236);
+	color: rgb(255, 255, 255);
+}

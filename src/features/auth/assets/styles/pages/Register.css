@@ -25,13 +25,13 @@
 .auth-layout.light .left-side .buttons-container .create-button,
 .auth-layout.dark .left-side .buttons-container .create-button
 {
-	background-color: rgb(253, 222, 105);
-	color: rgb(30, 31, 32);
+	background-color: var(--secondary-C100);
+	color: var(--dark-C100);
 }
 
 .auth-layout .left-side .buttons-container .create-button:hover
 {
-	background-color: rgba(253, 222, 105, 0.8) !important;
+	background-color: var(--secondary-C80) !important;
 
 	transition: background-color 0.2s ease-in-out;
 }

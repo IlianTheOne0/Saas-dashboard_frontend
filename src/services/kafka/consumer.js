@@ -12,8 +12,8 @@ class ConsumerService
 		const payload =
 		{
 			name: uniqueId,
-			format: "json",
-			"auto.offset.reset": "latest",
+			format: "binary",
+			"auto.offset.reset": "earliest",
 			"auto.commit.enable": "true",
 		};
 
@@ -72,7 +72,7 @@ class ConsumerService
 		const targetUrl = instanceUrl || this.baseUri;
 		if (!targetUrl) { return []; }
 
-		const url = `${targetUrl}/records?timeout=${KAFKA_CONFIG.POLL_INTERVAL_MS}`;
+		const url = `${targetUrl}/records?timeout=${KAFKA_CONFIG.FETCH_TIMEOUT_MS}`;
 
 		try
 		{
@@ -81,7 +81,7 @@ class ConsumerService
 				url,
 				{
 					method: "GET",
-					headers: { "Accept": KAFKA_CONFIG.CONTENT_TYPE_JSON },
+					headers: { "Accept": KAFKA_CONFIG.CONTENT_TYPE_BINARY },
 				}
 			);
 
@@ -95,18 +95,18 @@ class ConsumerService
 
 			const data = await response.json();
 
-			if (!Array.isArray(data)) return [];
+			if (!Array.isArray(data)) { return []; }
 
 			return data.map
 			(
 				record =>
 				(
 					{
-					topic: record.topic,
-					partition: record.partition,
-					offset: record.offset,
-					key: record.key,
-					value: record.value
+						topic: record.topic,
+						partition: record.partition,
+						offset: record.offset,
+						key: record.key,
+						value: record.value
 					}
 				)
 			);

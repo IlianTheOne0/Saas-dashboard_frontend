@@ -1,17 +1,16 @@
+import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import { useTheme } from "./hooks/useTheme";
 
-import { ThemeProvider } from "./context/theme.context";
-import { KafkaProvider } from "./context/kafka.context";
+import { ThemeProvider } from "./store/theme.context";
+import { KafkaProvider } from "./store/kafka.context";
 
 import NotFound from "./components/NotFound";
 import { AuthLayout, AuthPages } from "./features/auth/index";
 
-import KafkaServiceTest from "./features/tests/TestKafka";
-
 import "./assets/styles/App.css";
-import { cookies } from "./utils/cookies";
+import { UserProvider } from "./store/user.context";
 
 function ThemeToggleButton()
 {
@@ -20,29 +19,38 @@ function ThemeToggleButton()
 	return (<button onClick={toggleTheme} style={{position: "absolute", top: "0", right: "0", zIndex: "1000"}}>Toggle</button>);
 }
 
+function PageProps({ title, children })
+{
+	useEffect(() => { document.title = `${title} | SaaS Dashboard`; }, [title]);
+	return children;
+}
+
 function App()
 {
 	return (
 		<main className="app">
 			<ThemeProvider>
 				<KafkaProvider>
-					<ThemeToggleButton/>
-					{/*Test Components*/}
-					{/* <div>
-						<KafkaServiceTest/>
-					</div> */}
+					<UserProvider>
+						<ThemeToggleButton/>
 
-					<Routes>
-						<Route path="/" element={<Navigate to="auth/login" replace/>}/>
+						<Routes>
+							<Route path="/" element={<Navigate to="auth/login" replace/>}/>
 
-						<Route path="auth" element={<AuthLayout/>}>
-							<Route path="login" element={<AuthPages.Login/>}/>
-							<Route path="register" element={<AuthPages.Register/>}/>
-							<Route path="recovery" element={<AuthPages.Recovery/>}/>
-						</Route>
+							<Route path="auth" element={<AuthLayout/>}>
+								<Route path="login" element={<PageProps title="Login"><AuthPages.Login/></PageProps>}/>
+								<Route path="register" element={<PageProps title="Register"><AuthPages.Register/></PageProps>}/>
+								<Route path="recovery" element={<PageProps title="Recovery"><AuthPages.Recovery/></PageProps>}/>
+								<Route path="confirmation" element={<PageProps title="Confirmation"><AuthPages.Confirmation/></PageProps>}/>
+								<Route path="new-password" element={<PageProps title="New Password"><AuthPages.NewPassword/></PageProps>}/>
+								<Route path="supabase-link"/>
+							</Route>
 
-						<Route path="*" element={<NotFound/>}/>
-					</Routes>
+							<Route path="dashboard"/>
+
+							<Route path="*" element={<NotFound/>}/>
+						</Routes>
+					</UserProvider>
 				</KafkaProvider>
 			</ThemeProvider>
 		</main>

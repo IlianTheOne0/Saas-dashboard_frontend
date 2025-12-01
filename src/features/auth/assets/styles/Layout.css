@@ -25,11 +25,11 @@
 
 .auth-layout.light::after
 {
-	background-color: rgba(30, 31, 32, 0.4);
+	background-color: var(--dark-C40);
 }
 .auth-layout.dark::after
 {
-	background-color: rgb(30, 31, 32, 0.6);
+	background-color: var(--dark-C60);
 }
 
 .auth-layout .main
@@ -48,12 +48,12 @@
 
 .auth-layout.light .main
 {
-	background-color: rgb(255, 255, 255);
+	background-color: var(--white-C100);
 }
 
 .auth-layout.dark .main
 {
-	background-color: rgb(30, 31, 32);
+	background-color: var(--dark-C100);
 }
 
 .auth-layout .left-side .icon-full

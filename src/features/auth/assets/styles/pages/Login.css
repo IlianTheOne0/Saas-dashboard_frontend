@@ -6,12 +6,12 @@
 
 .auth-layout .left-side .buttons-container .login-button:hover
 {
-	background-color: rgba(62, 107, 236, 0.8) !important;
+	background-color: var(--primary-C80) !important;
 }
 
 .auth-layout .left-side .buttons-container .create-account-button:hover
 {
-	background-color: rgba(127, 133, 162, 0.2) !important;
+	background-color: var(--gray-C20) !important;
 }
 
 .auth-layout.light .left-side .buttons-container .login-button,
@@ -23,14 +23,14 @@
 
 .auth-layout.light .left-side .buttons-container .create-account-button
 {
-	color: rgb(30, 31, 32);
+	color: var(--dark-C100);
 
-	border: 2px solid rgba(127, 133, 162, 0.2);
+	border: 2px solid var(--gray-C20);
 }
 
 .auth-layout.dark .left-side .buttons-container .create-account-button
 {
-	color: rgb(255, 255, 255);
+	color: var(--white-C100);
 
-	border: 2px solid rgba(127, 133, 162, 0.4);
+	border: 2px solid var(--gray-C40);
 }

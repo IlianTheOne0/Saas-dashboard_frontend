@@ -14,3 +14,10 @@
 
 	cursor: pointer;
 }
+
+.auth-layout .common-button:disabled
+{
+	opacity: 0.6 !important;
+
+	cursor: not-allowed;
+}

@@ -9,7 +9,7 @@
 
 	object-fit: cover;
 
-	background-color: rgba(30, 31, 32, 0.4);
+	background-color: var(--dark-C40);
 	
 	z-index: -2;
 }

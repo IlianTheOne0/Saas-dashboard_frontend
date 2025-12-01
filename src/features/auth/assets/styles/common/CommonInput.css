@@ -20,12 +20,12 @@
 
 .auth-layout.light .common-input .label
 {
-	color: rgb(30, 31, 32);
+	color: var(--dark-C100);
 }
 
 .auth-layout.dark .common-input .label
 {
-	color: rgb(255, 255, 255);
+	color: var(--white-C100);
 }
 
 .auth-layout .common-input .input
@@ -47,19 +47,19 @@
 
 .auth-layout.light .common-input .input
 {
-	color: rgb(127, 133, 162);
-	border-color: rgba(143, 146, 161, 0.4);
+	color: var(--gray-C100);
+	border-color: var(--gray-C40);
 }
 
 .auth-layout.light .common-input .input::placeholder
 {
-	color: rgb(190, 194, 208);
+	color: var(--gray-C100);
 }
 
 .auth-layout.dark .common-input .input
 {
-	color: rgb(143, 146, 161);
-	border-color: rgb(190, 194, 208);
+	color: var(--dark_mode-text);
+	border-color: var(--gray-C40);
 }
 
 .auth-layout .common-input .input-icon

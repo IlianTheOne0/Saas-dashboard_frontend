@@ -29,12 +29,12 @@
 
 .not-found.light
 {
-	background-color: rgb(247, 247, 247);
-	color: rgb(30, 31, 32);
+	background-color: var(--light_gray-C100);
+	color: var(--dark-C100);
 }
 
 .not-found.dark
 { 
-	background-color: rgb(30, 31, 32);
-	color: rgb(255, 255, 255);
+	background-color: var(--dark-C100);
+	color: var(--white-C100);
 }

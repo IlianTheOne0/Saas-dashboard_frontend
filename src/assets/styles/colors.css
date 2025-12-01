@@ -1,0 +1,53 @@
+:root
+{
+	--primary-C100: rgb(62, 107, 236);
+	--primary-C80:  rgba(98, 134, 237, 0.8);
+	--primary-C60:  rgba(98, 134, 237, 0.6);
+	--primary-C40:  rgba(98, 134, 237, 0.4);
+	--primary-C20:  rgba(98, 134, 237, 0.2);
+
+	--secondary-C100: rgb(253, 222, 105);
+	--secondary-C80:  rgba(252, 228, 137, 0.8);
+	--secondary-C60:  rgba(252, 228, 137, 0.6);
+	--secondary-C40:  rgba(252, 228, 137, 0.4);
+	--secondary-C20:  rgba(252, 228, 137, 0.2);
+
+	--dark-C100: rgb(30, 31, 32);
+	--dark-C80: rgba(30, 31, 32, 0.8);
+	--dark-C60: rgba(30, 31, 32, 0.6);
+	--dark-C40: rgba(30, 31, 32, 0.4);
+	--dark-C20: rgba(30, 31, 32, 0.2);
+
+	--white-C100: rgb(255, 255, 255);
+	--white-C80: rgba(255, 255, 255, 0.8);
+	--white-C60: rgba(255, 255, 255, 0.6);
+	--white-C40: rgba(255, 255, 255, 0.4);
+	--white-C20: rgba(255, 255, 255, 0.2);
+	
+	--gray-C100: rgb(127, 133, 162);
+	--gray-C80: rgba(143, 146, 161, 0.8);
+	--gray-C60: rgba(143, 146, 161, 0.6);
+	--gray-C40: rgba(143, 146, 161, 0.4);
+	--gray-C20: rgba(143, 146, 161, 0.2);
+
+	--light_gray-C100: rgb(247, 247, 247);
+	--light_gray-C80: rgba(247, 247, 247, 0.8);
+	--light_gray-C60: rgba(247, 247, 247, 0.6);
+	--light_gray-C40: rgba(247, 247, 247, 0.4);
+	--light_gray-C20: rgba(247, 247, 247, 0.2);
+
+	--success-C100: rgb(98, 202, 118);
+	--success-C80: rgba(119, 194, 133, 0.8);
+	--success-C60: rgba(119, 194, 133, 0.6);
+	--success-C40: rgba(119, 194, 133, 0.4);
+	--success-C20: rgba(119, 194, 133, 0.2);
+
+	--error-C100: rgb(228, 88, 81); 
+	--error-C80: rgba(229, 104, 98, 0.8); 
+	--error-C60: rgba(229, 104, 98, 0.6);
+	--error-C40: rgba(229, 104, 98, 0.4);
+	--error-C20: rgba(229, 104, 98, 0.2);
+
+	--dark_mode-background: rgb(53, 54, 58);
+	--dark_mode-text: rgb(190, 194, 208);
+}

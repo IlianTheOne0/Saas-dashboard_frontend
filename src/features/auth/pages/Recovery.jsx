@@ -1,5 +1,9 @@
 import { useState, useCallback } from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import { useKafka } from "../../../hooks/services/useKafka";
+
+import { handleBackendError } from "../../../utils/errorHandler";
 
 import CommonInput from "../components/common/CommonInput";
 import CommonButton from "../components/common/CommonButton";
@@ -13,9 +17,14 @@ import IconIncorrectCircle from "../../../assets/images/icons/common/Incorrect-C
 import "../assets/styles/pages/Recovery.css";
 
 function Recovery()
-{	
-	const location = useLocation();
-	const [email, setEmail] = useState(location.state?.email || "");
+{
+	const { sendRequest } = useKafka();
+	
+	const navigate = useNavigate();
+
+	const [email, setEmail] = useState(location.state?.email || "iliantheone@gmail.com");
+
+	const [isLoading, setIsLoading] = useState(false);
 
 	const emailValidator = useCallback
 	(
@@ -26,6 +35,23 @@ function Recovery()
 		},
 		[]
 	);
+
+	const handleRecovery = async () =>
+	{
+		if (!emailValidator(email)) { alert("Please enter a valid email address."); return; }
+		if (isLoading) { return; }
+
+		setIsLoading(true);
+
+		try
+		{
+			const response = await sendRequest("recovery_password", { email }, "recovery_password-answer", 15000);
+			if (response?.status.toLowerCase() === "success") { alert("A recovery email has been sent to your email address."); navigate("/auth/login"); }
+			else { alert("Failed to send recovery email. Please try again later."); }
+		}
+		catch (error) { alert(handleBackendError(error)); }
+		finally { setIsLoading(false); }
+	}
 
 	return (
 		<>
@@ -38,12 +64,14 @@ function Recovery()
 				</div>
 				
 				<div className="inputs-container">
-					<CommonInput inputValue={email} setInputValue={setEmail} labelText="EMAIL" inputPlaceholder="davin.wong@mail.com" inputIcon={[IconCorrectCircle, IconIncorrectCircle]} validator={emailValidator}/>
+					<CommonInput inputValue={email} setInputValue={setEmail} labelText={`email`.toUpperCase()} inputPlaceholder="davin.wong@mail.com" inputIcon={[IconCorrectCircle, IconIncorrectCircle]} validator={emailValidator}/>
 				</div>
 
 				<div className="buttons-container">
-					<CommonButton className="send-email-button">Send Email</CommonButton>
-				</div> 
+					<CommonButton className="send-email-button" handler={handleRecovery}>Send Email</CommonButton>
+				</div>
+
+				{isLoading && <p className="loading-message">Sending recovery email...</p>}
 			</div>
 
 			<RightSide/>

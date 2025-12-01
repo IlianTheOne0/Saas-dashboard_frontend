@@ -1,13 +1,13 @@
 .auth-layout.light .left-side .buttons-container .send-email-button,
 .auth-layout.dark .left-side .buttons-container .send-email-button
 {
-	background-color: rgb(98, 202, 118);
-	color: rgb(255, 255, 255);
+	background-color: var(--success-C100);
+	color: var(--white-C100);
 }
 
 .auth-layout .left-side .buttons-container .send-email-button:hover
 {
-	background-color: rgba(98, 202, 118, 0.8) !important;
+	background-color: var(--success-C80) !important;
 
 	transition: background-color 0.2s ease-in-out;
 }

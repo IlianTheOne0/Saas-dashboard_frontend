@@ -10,12 +10,12 @@
 
 .auth-layout.light .right-side
 {
-	background-color: rgb(242, 243, 247)
+	background-color: var(--light_gray-C100);
 }
 
 .auth-layout.dark .right-side
 {
-	background-color: rgb(53, 54, 58);
+	background-color: var(--dark_mode-background);
 }
 
 .auth-layout .right-side .user-icon
@@ -35,12 +35,12 @@
 
 .auth-layout.light .right-side .title
 {
-	color: rgb(30, 31, 32);
+	color: var(--dark-C100);
 }
 
 .auth-layout.dark .right-side .title
 {
-	color: rgb(255, 255, 255);
+	color: var(--white-C100);
 }
 
 .auth-layout .right-side .subtitle
@@ -52,12 +52,12 @@
 
 .auth-layout.light .right-side .subtitle
 {
-	color: rgb(127, 133, 162);
+	color: var(--gray-C100);
 }
 
 .auth-layout.dark .right-side .subtitle
 {
-	color: rgb(190, 194, 208);
+	color: var(--dark_mode-text);
 }
 
 @media (max-width: 429px)
