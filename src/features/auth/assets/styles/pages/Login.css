@@ -1,0 +1,36 @@
+.auth-layout .left-side .buttons-container .login-button:hover,
+.auth-layout .left-side .buttons-container .create-account-button:hover
+{
+	transition: background-color 0.2s ease-in-out;
+}
+
+.auth-layout .left-side .buttons-container .login-button:hover
+{
+	background-color: var(--primary-C80) !important;
+}
+
+.auth-layout .left-side .buttons-container .create-account-button:hover
+{
+	background-color: var(--gray-C20) !important;
+}
+
+.auth-layout.light .left-side .buttons-container .login-button,
+.auth-layout.dark .left-side .buttons-container .login-button
+{
+	background-color: rgb(62, 107, 236);
+	color: rgb(255, 255, 255);
+}
+
+.auth-layout.light .left-side .buttons-container .create-account-button
+{
+	color: var(--dark-C100);
+
+	border: 2px solid var(--gray-C20);
+}
+
+.auth-layout.dark .left-side .buttons-container .create-account-button
+{
+	color: var(--white-C100);
+
+	border: 2px solid var(--gray-C40);
+}

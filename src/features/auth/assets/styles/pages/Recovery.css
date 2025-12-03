@@ -1,0 +1,13 @@
+.auth-layout.light .left-side .buttons-container .send-email-button,
+.auth-layout.dark .left-side .buttons-container .send-email-button
+{
+	background-color: var(--success-C100);
+	color: var(--white-C100);
+}
+
+.auth-layout .left-side .buttons-container .send-email-button:hover
+{
+	background-color: var(--success-C80) !important;
+
+	transition: background-color 0.2s ease-in-out;
+}

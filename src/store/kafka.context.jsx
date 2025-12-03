@@ -1,42 +1,74 @@
 import { createContext, useState, useRef, useCallback, useEffect } from 'react';
 
+import { useSecurity } from "../hooks/services/useSecurity";
+
 import { producerService } from '../services/kafka/producer';
 import { consumerService } from '../services/kafka/consumer';
 
-import KAFKA_CONFIG from '../assets/data/kafka/kafka.config';
+import KAFKA_CONFIG from '../config/kafka.config';
 
 const KafkaContext = createContext(null);
 
 function KafkaProvider({ children })
 {
+	const { encryptData, decryptData } = useSecurity();
+
 	const [messages, setMessages] = useState([]);
 	const [status, setStatus] = useState('Disconnected');
 	const [error, setError] = useState(null);
-	const [isSending, setIsSending] = useState(false);
-	const [produceStatus, setProduceStatus] = useState(null);
-
 	const [subscribedTopics, _] = useState(KAFKA_CONFIG.TOPICS_CONSUMER_NAMES);
 
 	const isMountedRef = useRef(true);
 	const consumerInstanceUrlRef = useRef(null);
 	const pollTimeoutRef = useRef(null);
 
-	const sendMessage = useCallback
+	const eventListenersRef = useRef({});
+
+	const addEventListener = useCallback
 	(
-		async (message, topic) =>
+		(event, callback) =>
 		{
-			if (!message) { return; }
-
-			setIsSending(true);
-			setProduceStatus(null);
-
-			try { await producerService.sendData(message, topic); setProduceStatus({ success: true, message: "Message sent successfully" }); }
-			catch (error) { setProduceStatus({ success: false, message: `Failed to send message: ${error.message}` }); console.error("Error sending message:", error); }
-			finally { setIsSending(false); }
+			if (!eventListenersRef.current[event]) { eventListenersRef.current[event] = []; }
+			eventListenersRef.current[event].push(callback);
+		},
+		[]
+	)
+	const removeEventListener = useCallback
+	(
+		(event, callback) =>
+		{
+			if (!eventListenersRef.current[event]) { return; }
+			eventListenersRef.current[event] = eventListenersRef.current[event].filter(callback => callback !== callback);
 		},
 		[]
 	);
-	const clearMessages = useCallback(() => { setMessages([]); }, []);
+	const dispatchMessage = useCallback
+	(
+		(message) =>
+		{
+			const event = message.event || message.Event;
+			const data = message.data || message.Data;
+
+			setMessages(previousMessages => [...previousMessages, data]);
+
+			if (event && eventListenersRef.current[event]) { eventListenersRef.current[event].forEach(callback => callback(data)); }
+		},
+		[]
+	);
+
+	const sendMessage = useCallback
+	(
+		async (event, data, topic = KAFKA_CONFIG.TOPICS_PRODUCE_NAMES[0]) =>
+		{
+			const payload = JSON.stringify({ Event: event, Data: data });
+
+			const encryptedPayload = encryptData(payload);
+			
+			try { await producerService.sendData(encryptedPayload, topic); }
+			catch (error) { console.error("Error sending message:", error); throw error; }
+		},
+		[encryptData]
+	);
 	const pollMessages = useCallback
 	(
 		async (instanceUrl) =>
@@ -46,9 +78,32 @@ function KafkaProvider({ children })
 			try
 			{
 				const newMessages = await consumerService.fetchData(instanceUrl);
-				
-				if (isMountedRef.current && newMessages && newMessages.length > 0) { setMessages(previous => [...previous, ...newMessages]); }
-				if (isMountedRef.current) { pollTimeoutRef.current = setTimeout(() => pollMessages(instanceUrl), KAFKA_CONFIG.POLL_INTERVAL_MS); }
+
+				if (isMountedRef.current && newMessages && newMessages.length > 0)
+				{
+					newMessages.forEach
+					(
+						message =>
+						{
+							let cipherText = message.value;
+							try { cipherText = atob(message.value); } 
+							catch (error) { console.error("Failed to decode binary message", error); return; }
+
+							const plainText = decryptData(cipherText);
+							
+							if (plainText)
+							{
+								try { const json = JSON.parse(plainText); dispatchMessage(json); }
+								catch (error) { console.warn("Failed to parse incoming message:", plainText, "; ", error); }
+							}
+						}
+					)
+				}
+				if (isMountedRef.current) 
+				{ 
+					const nextPollDelay = newMessages && newMessages.length > 0 ? 0 : KAFKA_CONFIG.POLL_INTERVAL_MS;
+					pollTimeoutRef.current = setTimeout(() => pollMessages(instanceUrl), nextPollDelay); 
+				}
 			}
 			catch (error)
 			{
@@ -64,15 +119,7 @@ function KafkaProvider({ children })
 				}
 			}
 		},
-		[]
-	);
-	const getMessagesByTopic = useCallback
-	(
-		(topic) =>
-		{
-			if (!topic) { return messages; }
-			return messages.filter(message => message.topic === topic);
-		}
+		[dispatchMessage, decryptData]
 	);
 
 	useEffect
@@ -119,7 +166,7 @@ function KafkaProvider({ children })
 		[pollMessages, subscribedTopics]
 	);
 
-	const value = { messages, status, error, isSending, produceStatus, subscribedTopics, sendMessage, clearMessages, getMessagesByTopic };
+	const value = { messages, status, error, sendMessage, addEventListener, removeEventListener };
 	return <KafkaContext.Provider value={value}>{children}</KafkaContext.Provider>;
 }
 

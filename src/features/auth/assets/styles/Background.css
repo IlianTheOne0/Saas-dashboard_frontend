@@ -1,0 +1,33 @@
+.auth-layout .background-img
+{
+	width: 100%;
+	height: 100%;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	object-fit: cover;
+
+	background-color: var(--dark-C40);
+	
+	z-index: -2;
+}
+
+@media (max-width: 429px)
+{
+	.auth-layout .background-img
+	{
+		height: 331px;
+	}
+
+	.auth-layout.recovery .background-img
+	{
+		height: 500px;
+	}
+
+	.auth-layout.register .background-img
+	{
+		height: 250px;
+	}
+}

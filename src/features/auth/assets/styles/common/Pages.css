@@ -1,0 +1,155 @@
+.auth-layout .left-side
+{
+	width: 50%;
+	height: 100%;
+
+	padding: 65px 65px 0 81px;
+}
+
+.auth-layout .left-side .title
+{
+	margin: 0;
+	margin-bottom: 10px;
+
+	font-family: "FC-Bold", Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	line-height: 30px;
+}
+
+.auth-layout.light .left-side .title
+{
+	color: var(--dark-C100);
+}
+
+.auth-layout.dark .left-side .title
+{
+	color: var(--white-C100);
+}
+
+.auth-layout .left-side .subtitle
+{
+	margin: 0;
+
+	font-family: "FC-Medium", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.auth-layout.light .left-side .subtitle
+{
+	color: var(--gray-C100);
+}
+
+.auth-layout.dark .left-side .subtitle
+{
+	color: var(--dark_mode-text);
+}
+
+.auth-layout .left-side .inputs-container
+{
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	margin-top: 35px;
+}
+
+.auth-layout .left-side .common-input.password-input .input-icon
+{
+	cursor: pointer;
+}
+
+.auth-layout .left-side .forgot-password
+{
+	margin-top: 10px;
+
+	font-family: "FC-Regular", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+
+	cursor: pointer;
+}
+
+.auth-layout .left-side .forgot-password:hover
+{
+	text-decoration: underline;
+}
+
+.auth-layout.light .left-side .forgot-password
+{
+	color: var(--gray-C100);
+}
+
+.auth-layout.dark .left-side .forgot-password
+{
+	color: var(--dark_mode-text);
+}
+
+.auth-layout .left-side .buttons-container
+{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	margin-top: 30px;
+}
+
+.auth-layout .left-side .loading-message
+{
+	margin-top: 12px;
+
+	font-family: "FC-Regular", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+
+	color: var(--gray-C100);
+}
+
+@media (max-width: 429px)
+{
+	.auth-layout .left-side
+	{
+		width: 100%;
+
+		padding: 38px 28px;
+	}
+
+	.auth-layout .left-side .title
+	{
+		margin: 0;
+	}
+
+	.auth-layout .left-side .inputs-container
+	{
+		gap: 6px;
+
+		margin-top: 18px;
+	}
+
+	.auth-layout .left-side .common-input .label
+	{
+		margin: 0;
+	}
+
+	.auth-layout .left-side .common-input .input-icon
+	{
+		top: 35px;
+	}
+
+	.auth-layout .left-side .forgot-password
+	{
+		margin-top: 6px;
+	}
+
+	.auth-layout .left-side .buttons-container
+	{
+		gap: 12px;
+
+		margin-top: 18px;
+	}
+
+	.auth-layout .left-side .buttons-container button
+	{
+		height: 40px;
+	}
+}

@@ -1,0 +1,40 @@
+.not-found
+{
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+	text-align: center;
+}
+
+.not-found .title
+{
+	margin: 0;
+
+	font-family: "FC-Bold", Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	line-height: 36px;
+}
+
+.not-found .subtitle
+{
+	font-family: "FC-Medium", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.not-found.light
+{
+	background-color: var(--light_gray-C100);
+	color: var(--dark-C100);
+}
+
+.not-found.dark
+{ 
+	background-color: var(--dark-C100);
+	color: var(--white-C100);
+}
