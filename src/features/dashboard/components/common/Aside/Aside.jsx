@@ -1,4 +1,4 @@
-import asideData from "../../../assets/data/aside.json"
+import asideData from "../../../assets/data/aside.json";
 
 import { useState, useCallback, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";

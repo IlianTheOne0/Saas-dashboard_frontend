@@ -2,7 +2,7 @@ import AsideCommonButton from "../AsideCommonButton";
 
 import AsideNavList from "../AsideNavList";
 
-import IconBlue from "../../../../assets/images/icon-blue.svg";
+import IconBlue from "../../../../assets/images/Aside/icon-blue.svg";
 
 import "../../../../assets/styles/common/Aside/desktop/DesktopAside.css";
 
