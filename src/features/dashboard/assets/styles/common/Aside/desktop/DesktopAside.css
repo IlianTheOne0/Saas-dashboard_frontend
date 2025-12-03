@@ -1,0 +1,54 @@
+.dashboard-layout .desktop-aside
+{
+	max-width: 165px;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dashboard-layout.light .desktop-aside
+{
+	background-color: var(--white-C100);
+}
+
+.dashboard-layout.dark .desktop-aside
+{
+	background-color: var(--dark_mode-background);
+}
+
+.dashboard-layout .desktop-aside .logo
+{
+	margin-top: 40px;
+}
+
+.dashboard-layout .desktop-aside .bottom-button .icon
+{
+	width: 18px;
+	height: 18px;
+}
+
+.dashboard-layout .desktop-aside .bottom-buttons
+{
+	margin-bottom: 40px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.dashboard-layout .desktop-aside .bottom-button
+{
+	background-color: transparent !important;
+	border: 2px solid var(--gray-C40);
+}
+
+@media (max-width: 429px)
+{
+	.dashboard-layout .desktop-aside
+	{
+		display: none;
+	}
+}

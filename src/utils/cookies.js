@@ -23,7 +23,7 @@ class Cookies
 	#get(name) { return this.#cookies[name]; }
 	#set(name, value, options = {})
 	{
-		let cookieString = `${name}=${encodeURIComponent(value)}`;
+		let cookieString = `${name}=${encodeURIComponent(value)}; path=/`;
 
 		if (options.expires instanceof Date) { cookieString += `; expires=${options.expires.toUTCString()}`; }
 		else if (typeof options.expires === "number")
@@ -38,6 +38,7 @@ class Cookies
 	}
 
 	get(name) { return this.#get(name); }
+	getAll() { return { ...this.#cookies }; }
 	set(name, value, options = {}) { this.#set(name, value, options); }
 }
 

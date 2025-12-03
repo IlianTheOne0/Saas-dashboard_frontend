@@ -1,23 +1,17 @@
+import { cookies } from "./utils/cookies";
+
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { useTheme } from "./hooks/useTheme";
-
 import { ThemeProvider } from "./store/theme.context";
 import { KafkaProvider } from "./store/kafka.context";
+import { UserProvider } from "./store/user.context";
 
 import NotFound from "./components/NotFound";
 import { AuthLayout, AuthPages } from "./features/auth/index";
+import { DashboardLayout } from "./features/dashboard";
 
 import "./assets/styles/App.css";
-import { UserProvider } from "./store/user.context";
-
-function ThemeToggleButton()
-{
-	const { toggleTheme } = useTheme();
-	
-	return (<button onClick={toggleTheme} style={{position: "absolute", top: "0", right: "0", zIndex: "1000"}}>Toggle</button>);
-}
 
 function PageProps({ title, children })
 {
@@ -32,8 +26,6 @@ function App()
 			<ThemeProvider>
 				<KafkaProvider>
 					<UserProvider>
-						<ThemeToggleButton/>
-
 						<Routes>
 							<Route path="/" element={<Navigate to="auth/login" replace/>}/>
 
@@ -46,8 +38,15 @@ function App()
 								<Route path="supabase-link"/>
 							</Route>
 
-							<Route path="dashboard"/>
-
+							<Route path="dashboard" element={<PageProps title="Dashboard"><DashboardLayout/></PageProps>}>
+								<Route path="feed" element={<div>Feed Page</div>}/>
+								<Route path="comment" element={<div>Comment Page</div>}/>
+								<Route path="calendar" element={<div>Calendar Page</div>}/>
+								<Route path="timelinechart" element={<div>Timelinechart Page</div>}/>
+								<Route path="user" element={<div>User Page</div>}/>
+								<Route path="settings" element={<div>Settings Page</div>}/>
+							</Route>
+							
 							<Route path="*" element={<NotFound/>}/>
 						</Routes>
 					</UserProvider>

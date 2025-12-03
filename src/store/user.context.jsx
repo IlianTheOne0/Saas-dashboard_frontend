@@ -1,4 +1,6 @@
-import { createContext, useCallback, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { cookies } from "../utils/cookies";
 
 const UserContext = createContext(null);
@@ -7,6 +9,8 @@ const SESSION_COOKIE_NAME = "user_session";
 
 function UserProvider({ children })
 {
+	const navigate = useNavigate();
+
 	const [session, setSession] = useState
 	(
 		() => 
@@ -39,8 +43,9 @@ function UserProvider({ children })
 		[]
 	);
 
-	const value = { session, saveSession, removeSession };
+	useEffect(() => { if (!session) { navigate("/auth/login"); } }, [session, navigate]);
 
+	const value = { session, saveSession, removeSession };
 	return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }
 
