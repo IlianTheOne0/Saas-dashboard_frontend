@@ -3,8 +3,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import { useKafka } from "../../../hooks/services/useKafka";
 
-import { handleBackendError } from "../../../utils/errorHandler";
-
 import CommonInput from "../components/common/CommonInput";
 import CommonButton from "../components/common/CommonButton";
 
@@ -19,7 +17,7 @@ import "../assets/styles/pages/Register.css";
 
 function Register()
 {
-	const { sendRequest } = useKafka();
+	const { sendRequest, handleBackendError } = useKafka();
 
 	const location = useLocation();
 	const navigate = useNavigate();
@@ -76,7 +74,7 @@ function Register()
 
 		try
 		{
-			const response = await sendRequest("register", { name, email, password }, "register-answer", 15000);
+			const response = await sendRequest("register", { name, email, password }, "register-answer", 15000, KAFKA_CONFIG.TOPICS_PRODUCE_NAMES.find(topic => topic.name === "auth")?.topic);
 			if (response?.status.toLowerCase() === "success") { alert("Registration successful! Please check your email to confirm your account."); navigate("/auth/login", { state: { email } }); }
 			else { alert("Registration failed. Please try again."); }
 		}

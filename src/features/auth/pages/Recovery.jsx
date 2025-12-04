@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 import { useKafka } from "../../../hooks/services/useKafka";
 
-import { handleBackendError } from "../../../utils/errorHandler";
-
 import CommonInput from "../components/common/CommonInput";
 import CommonButton from "../components/common/CommonButton";
 
@@ -18,7 +16,7 @@ import "../assets/styles/pages/Recovery.css";
 
 function Recovery()
 {
-	const { sendRequest } = useKafka();
+	const { sendRequest, handleBackendError } = useKafka();
 	
 	const navigate = useNavigate();
 
@@ -45,7 +43,7 @@ function Recovery()
 
 		try
 		{
-			const response = await sendRequest("recovery_password", { email }, "recovery_password-answer", 15000);
+			const response = await sendRequest("recovery_password", { email }, "recovery_password-answer", 15000, KAFKA_CONFIG.TOPICS_PRODUCE_NAMES.find(topic => topic.name === "auth")?.topic);
 			if (response?.status.toLowerCase() === "success") { alert("A recovery email has been sent to your email address."); navigate("/auth/login"); }
 			else { alert("Failed to send recovery email. Please try again later."); }
 		}

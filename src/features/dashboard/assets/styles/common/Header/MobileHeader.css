@@ -1,0 +1,52 @@
+.dashboard-layout .main .mobile-header
+{
+	display: none;
+}
+
+@media (max-width: 429px)
+{
+	.dashboard-layout .main .mobile-header
+	{
+		width: 100%;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		padding: 10px;
+	}
+
+	.dashboard-layout.light .main .mobile-header
+	{
+		background-color: var(--white-C100);
+	}
+
+	.dashboard-layout.dark .main .mobile-header
+	{
+		background-color: var(--dark_mode-background);
+	}
+
+	.dashboard-layout .main .mobile-header .buttons
+	{
+		display: flex;
+		justify-content: center;
+		gap: 16px;
+	}
+
+	.dashboard-layout .main .mobile-header .tab-text
+	{
+		font-family: "FC-Bold", Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+	.dashboard-layout.light .main .mobile-header .tab-text
+	{
+		color: var(--dark-C100);
+	}
+
+	.dashboard-layout.dark .main .mobile-header .tab-text
+	{
+		color: var(--white-C100);
+	}
+}

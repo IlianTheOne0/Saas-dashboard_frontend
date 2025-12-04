@@ -34,4 +34,4 @@ class Cache
 	size() { return this.#map.size; }
 }
 
-export { Cache };
+export const cache = new Cache();

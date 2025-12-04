@@ -1,7 +1,7 @@
-.not-found
+.exception-component
 {
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 
 	display: flex;
 	flex-direction: column;
@@ -11,7 +11,7 @@
 	text-align: center;
 }
 
-.not-found .title
+.exception-component .title
 {
 	margin: 0;
 
@@ -20,20 +20,20 @@
 	line-height: 36px;
 }
 
-.not-found .subtitle
+.exception-component .subtitle
 {
 	font-family: "FC-Medium", Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	line-height: 20px;
 }
 
-.not-found.light
+.exception-component.light
 {
 	background-color: var(--light_gray-C100);
 	color: var(--dark-C100);
 }
 
-.not-found.dark
+.exception-component.dark
 { 
 	background-color: var(--dark-C100);
 	color: var(--white-C100);

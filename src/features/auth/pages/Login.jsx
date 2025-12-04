@@ -1,10 +1,10 @@
+import KAFKA_CONFIG from "../../../config/kafka.config";
+
 import { useState, useCallback, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { useKafka } from "../../../hooks/services/useKafka";
 import { useUser } from "../../../hooks/useUser";
-
-import { handleBackendError } from "../../../utils/errorHandler";
 
 import CommonInput from "../components/common/CommonInput";
 import CommonButton from "../components/common/CommonButton";
@@ -20,8 +20,8 @@ import "../assets/styles/pages/Login.css";
 
 function Login()
 {
-	const { sendRequest } = useKafka();
-	const { saveSession } = useUser();
+	const { sendRequest, handleBackendError } = useKafka();
+	const { saveAccessToken } = useUser();
 
 	const location = useLocation();
 	const navigate = useNavigate();
@@ -71,11 +71,16 @@ function Login()
 
 		try
 		{
-			const response = await sendRequest("login", { email, password }, "login-answer", 15000);
+			const response = await sendRequest("login", { email, password }, "login-answer", 15000, KAFKA_CONFIG.TOPICS_PRODUCER_NAMES.find(topic => topic.name === "auth")?.topic);
+			
 			if (response?.status.toLowerCase() === "success")
 			{
-				if (response.data) { saveSession(response.data); }
-				else { saveSession(null); }
+				if (response.data) 
+				{
+					const token = response.data;
+					saveAccessToken(token); 
+				}
+				else { saveAccessToken(null); }
 
 				navigate("/dashboard");
 			}
@@ -103,7 +108,6 @@ function Login()
 					<h2 className="title">Welcome Back!</h2>
 					<p className="subtitle">Sign in to continue</p>
 				</div>
-				
 				<div className="inputs-container">
 					<CommonInput inputValue={email} setInputValue={setEmail} labelText={`email`.toUpperCase()} inputPlaceholder="davin.wong@mail.com" inputIcon={[IconCorrectCircle, IconIncorrectCircle]} validator={emailValidator}/>
 					<CommonInput inputValue={password} setInputValue={setPassword} className="password-input" labelText={`password`.toUpperCase()} inputType={isPasswordVisible ? "text" : "password"} inputPlaceholder={isPasswordVisible ? "StrongPassword123!" : "••••••••••••••••••"} inputIcon={IconEye} iconClickHandler={passwordIconClickHandler} validator={passwordValidator}/>
@@ -115,8 +119,8 @@ function Login()
 					<CommonButton className="login-button" handler={handleLogin}>Login</CommonButton>
 					<CommonButton className="create-account-button" handler={navigateToRegister}>Create an account</CommonButton>
 				</div>
-
-				{isLoading && <p className="loading-message">Logging in...</p>}
+				
+				{isLoading && <p className="loading-message">Logging in...</p>}		
 			</div>
 
 			<RightSide/>

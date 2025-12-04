@@ -3,8 +3,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import { useKafka } from "../../../hooks/services/useKafka";
 
-import { handleBackendError } from "../../../utils/errorHandler";
-
 import CommonInput from "../components/common/CommonInput";
 import CommonButton from "../components/common/CommonButton";
 
@@ -17,7 +15,7 @@ import "../assets/styles/pages/NewPassword.css";
 
 function NewPassword()
 {
-	const { sendRequest } = useKafka();
+	const { sendRequest, handleBackendError } = useKafka();
 
 	const location = useLocation();
 	const navigate = useNavigate();
@@ -25,9 +23,8 @@ function NewPassword()
 	const [accessToken, _] = useState(location.state?.access_token || "");
 	const [refreshToken, __] = useState(location.state?.refresh_token || "");
 
-	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
 	const [password, setPassword] = useState("");
+	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 	
 	const [isLoading, setIsLoading] = useState(false);
 	
@@ -61,7 +58,7 @@ function NewPassword()
 
 		try
 		{
-			const response = await sendRequest("new_password", { password, accessToken, refreshToken }, "new_password-answer", 15000);
+			const response = await sendRequest("new_password", { password, accessToken, refreshToken }, "new_password-answer", 15000, KAFKA_CONFIG.TOPICS_PRODUCE_NAMES.find(topic => topic.name === "auth")?.topic);
 			console.log(response);
 			if (response?.status.toLowerCase() === "success") { alert("Your password has been successfully updated."); navigate("/auth/login"); }
 			else { alert("Failed to update password. Please try again later."); }

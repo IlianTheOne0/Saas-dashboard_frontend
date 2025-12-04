@@ -1,3 +1,5 @@
+import KAFKA_CONFIG from '../config/kafka.config';
+
 import { createContext, useState, useRef, useCallback, useEffect } from 'react';
 
 import { useSecurity } from "../hooks/services/useSecurity";
@@ -5,7 +7,7 @@ import { useSecurity } from "../hooks/services/useSecurity";
 import { producerService } from '../services/kafka/producer';
 import { consumerService } from '../services/kafka/consumer';
 
-import KAFKA_CONFIG from '../config/kafka.config';
+import { generateUUID } from '../utils/generateUUID.js';
 
 const KafkaContext = createContext(null);
 
@@ -14,9 +16,9 @@ function KafkaProvider({ children })
 	const { encryptData, decryptData } = useSecurity();
 
 	const [messages, setMessages] = useState([]);
-	const [status, setStatus] = useState('Disconnected');
+	const [status, setStatus] = useState(KAFKA_CONFIG.STATUS.DISCONNECTED);
 	const [error, setError] = useState(null);
-	const [subscribedTopics, _] = useState(KAFKA_CONFIG.TOPICS_CONSUMER_NAMES);
+	const [subscribedTopics, _] = useState(KAFKA_CONFIG.TOPICS_CONSUMER_NAMES.map(topic => topic.topic));
 
 	const isMountedRef = useRef(true);
 	const consumerInstanceUrlRef = useRef(null);
@@ -48,19 +50,22 @@ function KafkaProvider({ children })
 		{
 			const event = message.event || message.Event;
 			const data = message.data || message.Data;
+			const correlationId = message.correlationId || message.CorrelationId;
 
 			setMessages(previousMessages => [...previousMessages, data]);
 
-			if (event && eventListenersRef.current[event]) { eventListenersRef.current[event].forEach(callback => callback(data)); }
+			if (event && eventListenersRef.current[event]) { eventListenersRef.current[event].forEach(callback => callback({ data, correlationId })); }
 		},
 		[]
 	);
 
 	const sendMessage = useCallback
 	(
-		async (event, data, topic = KAFKA_CONFIG.TOPICS_PRODUCE_NAMES[0]) =>
+		async (event, data, topic = KAFKA_CONFIG.TOPICS_PRODUCE_NAMES[0].topic, correlationId = null) =>
 		{
-			const payload = JSON.stringify({ Event: event, Data: data });
+			const cid = correlationId || generateUUID();
+
+			const payload = JSON.stringify({ Event: event, CorrelationId: cid, Data: data });
 
 			const encryptedPayload = encryptData(payload);
 			
@@ -69,6 +74,7 @@ function KafkaProvider({ children })
 		},
 		[encryptData]
 	);
+
 	const pollMessages = useCallback
 	(
 		async (instanceUrl) =>
@@ -79,6 +85,15 @@ function KafkaProvider({ children })
 			{
 				const newMessages = await consumerService.fetchData(instanceUrl);
 
+				setStatus
+				(
+					(prevStatus) =>
+					{
+						if (prevStatus === KAFKA_CONFIG.STATUS.ERROR) { setError(null); return KAFKA_CONFIG.STATUS.CONNECTED; }
+						return prevStatus;
+					}
+				);
+
 				if (isMountedRef.current && newMessages && newMessages.length > 0)
 				{
 					newMessages.forEach
@@ -87,20 +102,20 @@ function KafkaProvider({ children })
 						{
 							let cipherText = message.value;
 							try { cipherText = atob(message.value); } 
-							catch (error) { console.error("Failed to decode binary message", error); return; }
+							catch (error) { console.error("Failed to decode binary", error); return; }
 
 							const plainText = decryptData(cipherText);
-							
 							if (plainText)
 							{
 								try { const json = JSON.parse(plainText); dispatchMessage(json); }
-								catch (error) { console.warn("Failed to parse incoming message:", plainText, "; ", error); }
+								catch (error) { console.warn("Failed to parse message", error); }
 							}
 						}
-					)
+					);
 				}
-				if (isMountedRef.current) 
-				{ 
+
+				if (isMountedRef.current)
+				{
 					const nextPollDelay = newMessages && newMessages.length > 0 ? 0 : KAFKA_CONFIG.POLL_INTERVAL_MS;
 					pollTimeoutRef.current = setTimeout(() => pollMessages(instanceUrl), nextPollDelay); 
 				}
@@ -108,14 +123,13 @@ function KafkaProvider({ children })
 			catch (error)
 			{
 				console.warn("Polling error:", error.message);
-
 				if (error.message === "Consumer instance not found")
 				{
-					if (isMountedRef.current) { setStatus("Session expired. Refreshing..."); }
+					if (isMountedRef.current) { setStatus(KAFKA_CONFIG.STATUS.RECONNECTING); }
 				}
 				else
 				{
-					if (isMountedRef.current) { pollTimeoutRef.current = setTimeout(() => pollMessages(instanceUrl), 5000); }
+					if (isMountedRef.current) { setStatus(KAFKA_CONFIG.STATUS.ERROR); setError(error.message);pollTimeoutRef.current = setTimeout(() => pollMessages(instanceUrl), 5000); }
 				}
 			}
 		},
@@ -132,25 +146,25 @@ function KafkaProvider({ children })
 			{
 				try
 				{
-					setStatus("Initializing...");
+					setStatus(KAFKA_CONFIG.STATUS.CONNECTING);
 					
 					const url = await consumerService.createConsumer();
 					
 					if (!isMountedRef.current) { consumerService.destroy(url); return; }
 					consumerInstanceUrlRef.current = url;
 
-					setStatus("Subscribing...");
 					await consumerService.subscribe(url, subscribedTopics);
 
 					if (!isMountedRef.current) { return; }
 
-					setStatus("Connected & Listening");
+					setStatus(KAFKA_CONFIG.STATUS.CONNECTED);
 					pollMessages(url);
 				}
 				catch (error)
 				{
 					console.error("Consumer Setup Failed:", error);
-					if (isMountedRef.current) { setError(`Connection Failed: ${error.message}`); setStatus("Error"); }
+
+					if (isMountedRef.current) { setError(`Connection Failed: ${error.message}`); setStatus(KAFKA_CONFIG.STATUS.ERROR); }
 				}
 			};
 
@@ -159,8 +173,9 @@ function KafkaProvider({ children })
 			return () =>
 			{
 				isMountedRef.current = false;
+
 				if (pollTimeoutRef.current) { clearTimeout(pollTimeoutRef.current); }
-				if (consumerInstanceUrlRef.current) { const urlToDestroy = consumerInstanceUrlRef.current; consumerInstanceUrlRef.current = null; consumerService.destroy(urlToDestroy); }
+				if (consumerInstanceUrlRef.current) { const urlToDestroy = consumerInstanceUrlRef.current; consumerInstanceUrlRef.current = null;  consumerService.destroy(urlToDestroy); }
 			};
 		},
 		[pollMessages, subscribedTopics]

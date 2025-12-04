@@ -34,7 +34,6 @@ class ConsumerService
 			const instanceUrl = `${url}/instances/${uniqueId}`;
 			this.baseUri = instanceUrl;
 			
-			console.log(`[Kafka] Consumer created: ${uniqueId}`);
 			return instanceUrl;
 		}
 		catch (error) { console.error("[Kafka] Create Consumer Error:", error.message); throw error; }
@@ -61,8 +60,6 @@ class ConsumerService
 			);
 
 			if (!response.ok) { const errorText = await response.text(); throw new Error(`Failed to subscribe (Status ${response.status}): ${errorText}`); }
-
-			console.log(`[Kafka] Subscribed to: ${payload.topics.join(", ")}`);
 		}
 		catch (error) { console.error("[Kafka] Subscribe Error:", error.message); throw error; }
 	}

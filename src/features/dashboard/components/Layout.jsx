@@ -2,19 +2,18 @@ import { Outlet } from "react-router-dom";
 
 import { useTheme } from "../../../hooks/useTheme";
 
-import Aside from "./common/Aside/Aside";
+import CommonWrapper from "./common/CommonWrapper";
 
 import "../assets/styles/Layout.css";
 
 function Layout()
 {
-	const { theme } = useTheme();
+	const { theme, toggleTheme } = useTheme();
 
 	return (
 		<main className={`dashboard-layout ${theme}`}>
-			<Aside/>
-
 			<section className="main">
+				<CommonWrapper theme={theme} toggleTheme={toggleTheme}/>
 				<Outlet/>
 			</section>
 		</main>

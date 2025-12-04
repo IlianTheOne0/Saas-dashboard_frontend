@@ -9,12 +9,12 @@
 		},
 		"items":
 		[
-			{ "id": 1, "iconName": "feed", "link": "/feed" },
-			{ "id": 2, "iconName": "comment", "link": "/comment" },
-			{ "id": 3, "iconName": "calendar", "link": "/calendar" },
-			{ "id": 4, "iconName": "timelinechart", "link": "/timelinechart" },
-			{ "id": 5, "iconName": "user", "link": "/user" },
-			{ "id": 6, "iconName": "settings", "link": "/settings" }
+			{ "id": 1, "iconName": "feed" },
+			{ "id": 2, "iconName": "comment" },
+			{ "id": 3, "iconName": "calendar" },
+			{ "id": 4, "iconName": "timelinechart" },
+			{ "id": 5, "iconName": "user" },
+			{ "id": 6, "iconName": "settings" }
 		]
 	},
 	"bottom_items":

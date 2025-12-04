@@ -1,13 +1,15 @@
-import { cookies } from "./utils/cookies";
-
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+
+import { useKafka } from "./hooks/services/useKafka";
 
 import { ThemeProvider } from "./store/theme.context";
 import { KafkaProvider } from "./store/kafka.context";
 import { UserProvider } from "./store/user.context";
 
 import NotFound from "./components/NotFound";
+import ConnectingToServer from "./components/ConnectingToServer";
+import ServerUnavailable from "./components/ServerUnavailable";
 import { AuthLayout, AuthPages } from "./features/auth/index";
 import { DashboardLayout } from "./features/dashboard";
 
@@ -15,7 +17,13 @@ import "./assets/styles/App.css";
 
 function PageProps({ title, children })
 {
+	const { isServiceUnavailable, isInitializing } = useKafka();
+
 	useEffect(() => { document.title = `${title} | SaaS Dashboard`; }, [title]);
+
+	if (isInitializing) { return <ConnectingToServer/>; }
+	if (isServiceUnavailable()) { return <ServerUnavailable/>; }
+
 	return children;
 }
 
@@ -38,12 +46,12 @@ function App()
 								<Route path="supabase-link"/>
 							</Route>
 
-							<Route path="dashboard" element={<PageProps title="Dashboard"><DashboardLayout/></PageProps>}>
-								<Route path="feed" element={<div>Feed Page</div>}/>
-								<Route path="comment" element={<div>Comment Page</div>}/>
+							<Route path="dashboard" element={<DashboardLayout/>}>
+								<Route path="home" element={<div>Feed Page</div>}/>
+								<Route path="chat" element={<div>Comment Page</div>}/>
 								<Route path="calendar" element={<div>Calendar Page</div>}/>
-								<Route path="timelinechart" element={<div>Timelinechart Page</div>}/>
-								<Route path="user" element={<div>User Page</div>}/>
+								<Route path="appointments" element={<div>Timelinechart Page</div>}/>
+								<Route path="contacts" element={<div>User Page</div>}/>
 								<Route path="settings" element={<div>Settings Page</div>}/>
 							</Route>
 							
