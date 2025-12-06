@@ -1,6 +1,6 @@
 .dashboard-layout .main .desktop-header
 {
-	width: 100%;
+	width: calc(100% - 165px);
 
 	position: fixed;
 	top: 0;
@@ -13,6 +13,13 @@
 
 	box-sizing: border-box;
 	z-index: 10;
+
+	transition: width 0.3s ease-in-out;
+}
+
+.dashboard-layout .main:has(.common-sidebar .content:hover) .desktop-header
+{
+	width: calc(100% - 165px - 365px);
 }
 
 .dashboard-layout .main .desktop-header .name

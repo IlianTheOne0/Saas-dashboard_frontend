@@ -11,7 +11,7 @@ import NotFound from "./components/NotFound";
 import ConnectingToServer from "./components/ConnectingToServer";
 import ServerUnavailable from "./components/ServerUnavailable";
 import { AuthLayout, AuthPages } from "./features/auth/index";
-import { DashboardLayout } from "./features/dashboard";
+import { DashboardLayout, DashboardPages } from "./features/dashboard";
 
 import "./assets/styles/App.css";
 
@@ -51,7 +51,7 @@ function App()
 								<Route path="chat" element={<div>Comment Page</div>}/>
 								<Route path="calendar" element={<div>Calendar Page</div>}/>
 								<Route path="appointments" element={<div>Timelinechart Page</div>}/>
-								<Route path="contacts" element={<div>User Page</div>}/>
+								<Route path="contacts" element={<DashboardPages.Contacts/>}/>
 								<Route path="settings" element={<div>Settings Page</div>}/>
 							</Route>
 							
