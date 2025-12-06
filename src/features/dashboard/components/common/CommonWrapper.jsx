@@ -1,3 +1,6 @@
+const asideData = require("../../assets/data/aside.json");
+const tabsData = require("../../assets/data/tabs.json").tabs;
+
 import { useState, useEffect, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -6,9 +9,6 @@ import { useUser } from "../../../../hooks/useUser";
 import DesktopAside from "./Aside/DesktopAside";
 import MobileAside from "./Aside/MobileAside";
 import Header from "./Header/Header";
-
-const asideData = require("../../assets/data/aside.json");
-const tabsData = require("../../assets/data/tabs.json").tabs;
 
 const defaultNavPath = asideData.nav_items.paths.default_path;
 const inactiveNavFolderAndDark = asideData.nav_items.paths.inactive_folder;

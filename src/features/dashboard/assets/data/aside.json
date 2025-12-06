@@ -3,7 +3,7 @@
 	{
 		"paths":
 		{
-			"default_path": "https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/features/dashboard_common-ui/src/features/dashboard/assets/images/Aside/nav/",
+			"default_path": "https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/developer/src/features/dashboard/assets/images/Aside/nav/",
 			"inactive_folder": "inactive/",
 			"active_folder": "active&dark/"
 		},
@@ -21,7 +21,7 @@
 	{
 		"paths":
 		{
-			"default_path": "https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/features/dashboard_common-ui/src/features/dashboard/assets/images/Aside/bottom/",
+			"default_path": "https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/developer/src/features/dashboard/assets/images/Aside/bottom/",
 			"inactive_folder": "light/",
 			"active_folder": "dark/"
 		}
