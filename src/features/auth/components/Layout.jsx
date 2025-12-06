@@ -12,12 +12,14 @@ import "../assets/styles/common/Pages.css";
 function Layout()
 {
 	const { theme } = useTheme();
-	const { session } = useUser();
+	const { accessToken } = useUser();
 
 	const navigate = useNavigate();
 	const location = useLocation();
 
 	const [locationClassName, setLocationClassName] = useState("");
+
+	useEffect(() => { if (location.pathname === "/auth") { navigate("/auth/login", { replace: true }); } }, [location, navigate]);
 
 	useEffect
 	(
@@ -62,14 +64,7 @@ function Layout()
 		[location, navigate]
 	);
 
-	useEffect
-	(
-		() =>
-		{
-			if (session) { navigate("/dashboard"); }
-		},
-		[]
-	);
+	useEffect(() => { if (accessToken) { navigate("/dashboard"); } }, [accessToken, navigate]);
 
 	return (
 		<main className={`auth-layout ${theme} ${locationClassName}`}>

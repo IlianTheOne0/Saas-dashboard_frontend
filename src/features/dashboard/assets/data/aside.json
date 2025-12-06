@@ -1,0 +1,29 @@
+{
+	"nav_items":
+	{
+		"paths":
+		{
+			"default_path": "https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/developer/src/features/dashboard/assets/images/Aside/nav/",
+			"inactive_folder": "inactive/",
+			"active_folder": "active&dark/"
+		},
+		"items":
+		[
+			{ "id": 1, "iconName": "feed" },
+			{ "id": 2, "iconName": "comment" },
+			{ "id": 3, "iconName": "calendar" },
+			{ "id": 4, "iconName": "timelinechart" },
+			{ "id": 5, "iconName": "user" },
+			{ "id": 6, "iconName": "settings" }
+		]
+	},
+	"bottom_items":
+	{
+		"paths":
+		{
+			"default_path": "https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/developer/src/features/dashboard/assets/images/Aside/bottom/",
+			"inactive_folder": "light/",
+			"active_folder": "dark/"
+		}
+	}
+}

@@ -1,0 +1,47 @@
+.dashboard-layout .common-button-with-icon
+{
+	width: 48px;
+	height: 48px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: transparent;
+
+	border: none;
+	border-radius: 12px;
+
+	cursor: pointer;
+}
+
+.dashboard-layout .common-button-with-icon.active
+{
+	background-color: var(--primary-C100) !important;
+	cursor: default;
+}
+
+.dashboard-layout .common-button-with-icon:not(.active):hover
+{
+	background-color: var(--gray-C40) !important;
+	transition: background-color 0.3s ease;
+}
+
+.dashboard-layout.light .common-button-with-icon
+{
+	background-color: var(--light_gray-C100);
+}
+
+.dashboard-layout.dark .common-button-with-icon
+{
+	background-color: var(--gray-C20);
+}
+
+@media (max-width: 429px)
+{
+	.dashboard-layout .common-button-with-icon
+	{
+		width: 38px;
+		height: 38px;
+	}
+}

@@ -1,0 +1,55 @@
+.dashboard-layout .main .desktop-header
+{
+	width: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 165px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-top: 45px;
+
+	box-sizing: border-box;
+	z-index: 10;
+}
+
+.dashboard-layout .main .desktop-header .name
+{
+	font-family: "FC-Medium", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+
+	cursor: pointer;
+}
+
+.dashboard-layout.light .main .desktop-header .name
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .main .desktop-header .name
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .main .desktop-header .avatar
+{
+	width: 48px;
+	height: 48px;
+
+	object-fit: cover;
+
+	border-radius: 15.16px;
+
+	cursor: pointer;
+}
+
+@media (max-width: 429px)
+{
+	.dashboard-layout .main .desktop-header
+	{
+		display: none;
+	}
+}

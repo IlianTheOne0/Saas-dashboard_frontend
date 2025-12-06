@@ -2,16 +2,16 @@ import { useTheme } from "../hooks/useTheme";
 
 import "../assets/styles/components/DefaultExceptionStyle.css";
 
-function NotFound()
+function ServerUnavailable()
 {
 	const { theme } = useTheme();
 
 	return (
 		<section className={`exception-component ${theme}`}>
-			<h1 className="title">404 - Not Found</h1>
-			<p className="subtitle">The page you are looking for does not exist</p>
+			<h1 className="title">503 - Server Unavailable</h1>
+			<p className="subtitle">The server is currently unavailable. Please try again later.</p>
 		</section>
 	);
 }
 
-export default NotFound;
+export default ServerUnavailable;

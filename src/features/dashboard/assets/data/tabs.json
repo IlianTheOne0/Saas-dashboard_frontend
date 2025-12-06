@@ -1,0 +1,11 @@
+{
+	"tabs":
+	[
+		{ "id": 1, "name": "home" },
+		{ "id": 2, "name": "chat" },
+		{ "id": 3, "name": "calendar" },
+		{ "id": 4, "name": "appointments" },
+		{ "id": 5, "name": "contacts" },
+		{ "id": 6, "name": "settings" }
+	]
+}
