@@ -1,0 +1,44 @@
+.dashboard-layout .home
+{
+	width: 100%;
+	height: calc(100vh - var(--header-height));
+
+	position: relative;
+
+	padding: 20px;
+	
+	flex-grow: 1;
+	
+	overflow: hidden;
+}
+
+.dashboard-layout .home .overlay
+{
+	width: 100%;
+	height: 100%;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	pointer-events: none;
+	
+	z-index: 15;
+
+	transition: background-color 0.2s ease;
+}
+
+.dashboard-layout .home .overlay.tab-selector-open
+{
+	pointer-events: auto;
+}
+
+.dashboard-layout.light .home .overlay.tab-selector-open
+{
+	background-color: var(--dark-C60);
+}
+
+.dashboard-layout.dark .home .overlay.tab-selector-open
+{
+	background-color: var(--primary-C20);
+}
