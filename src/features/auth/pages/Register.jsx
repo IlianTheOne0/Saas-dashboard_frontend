@@ -1,3 +1,5 @@
+import KAFKA_CONFIG from "../../../config/kafka.config";
+
 import { useState, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -22,9 +24,9 @@ function Register()
 	const location = useLocation();
 	const navigate = useNavigate();
 	
-	const [name, setName] = useState("Ilian Shchepinskyi");
-	const [email, setEmail] = useState(location.state?.email || "iliantheone@gmail.com");
-	const [password, setPassword] = useState("123456789AbC!");
+	const [name, setName] = useState("User Number 0");
+	const [email, setEmail] = useState(location.state?.email || "wocabe4632@besenica.com");
+	const [password, setPassword] = useState("UserNumber:0");
 
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -74,7 +76,7 @@ function Register()
 
 		try
 		{
-			const response = await sendRequest("register", { name, email, password }, "register-answer", 15000, KAFKA_CONFIG.TOPICS_PRODUCE_NAMES.find(topic => topic.name === "auth")?.topic);
+			const response = await sendRequest("register", { name, email, password }, "register-answer", 15000, KAFKA_CONFIG.TOPICS_PRODUCER_NAMES.find(topic => topic.name === "auth")?.topic);
 			if (response?.status.toLowerCase() === "success") { alert("Registration successful! Please check your email to confirm your account."); navigate("/auth/login", { state: { email } }); }
 			else { alert("Registration failed. Please try again."); }
 		}

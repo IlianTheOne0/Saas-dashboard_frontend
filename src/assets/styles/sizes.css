@@ -1,0 +1,9 @@
+:root
+{
+	--nav-width: 165px;
+	--right-sidebar-width: 365px;
+	--right-sidebar-width-closed: 165px;
+	--header-height: 120px;
+
+	--page-gap: 64px
+}

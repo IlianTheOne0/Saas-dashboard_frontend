@@ -33,7 +33,7 @@
 		background-color: var(--dark_mode-background);
 	}
 
-	.dashboard-layout .main:has(.common-sidebar .content:hover) .mobile-aside
+	.dashboard-layout .main:has(.sidebar .content:hover) .mobile-aside
 	{
 		transform: translateY(100px);
 		transition: transform 0.3s ease-in-out;

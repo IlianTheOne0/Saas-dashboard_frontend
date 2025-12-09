@@ -1,11 +1,12 @@
-.dashboard-layout .main .common-sidebar
+.dashboard-layout .main .sidebar
 {
-	width: 365px;
+	width: var(--right-sidebar-width-closed);
 	height: 100%;
 	
 	position: fixed;
 	top: 0;
 	right: 0;
+	
 }
 
 .dashboard-layout .main .indicator
@@ -42,6 +43,8 @@
 	top: 0;
 	right: 0;
 
+	padding: 54px 40px;
+
 	background-color: var(--primary-C100);
 
 	border-radius: 32px 0 0 32px;
@@ -56,23 +59,51 @@
 	transition: transform 0.3s ease-in-out;
 }
 
-.dashboard-layout .main .common-sidebar:has(.content:hover) .indicator
+.dashboard-layout .main .sidebar:has(.content:hover) .indicator
 {
 	transform: translateX(0);
 	transition: transform 0.3s ease-in-out;
 }
 
+.dashboard-layout .main .sidebar:has(.content:hover)
+{
+	width: var(--right-sidebar-width);
+}
+
+.dashboard-layout .main .sidebar.force-close
+{
+	width: var(--right-sidebar-width-closed) !important;
+}
+
+.dashboard-layout .main .sidebar.force-close .content
+{
+	transform: translateX(250px) !important;
+}
+
+.dashboard-layout .main .sidebar.force-close .indicator
+{
+	transform: translateX(250px) !important;
+}
+
 @media (max-width: 429px)
 {
-	.dashboard-layout .main .common-sidebar
+	.dashboard-layout .main .sidebar
 	{
 		width: 100%;
 		height: 70%;
 
 		bottom: 0;
 		left: 0;
+
+		pointer-events: none;
 	}
 
+	.dashboard-layout .main .sidebar .indicator,
+	.dashboard-layout .main .sidebar .content
+	{
+		pointer-events: auto;
+	}
+	
 	.dashboard-layout .main .indicator
 	{
 		width: 128px;
@@ -80,7 +111,7 @@
 
 		z-index: 10;
 
-		top: calc(100% - 70% - 10px);
+		top: calc(100% - 70% - 10px + 20px);
 		left: calc(50% - (128px / 2));
 
 		transform: translateX(0) translateY(350px);
@@ -96,20 +127,39 @@
 		left: 10px;
 		top: calc(100% - 70%);
 
+		padding: 48px 28px;
+
 		z-index: 9;
 
 		transform: translateX(0) translateY(350px);
 	}
 
-	.dashboard-layout .main .content:hover
+	.dashboard-layout .main .sidebar.open .content
 	{
 		transform: translateY(0);
 		transition: transform 0.3s ease-in-out;
 	}
 
-	.dashboard-layout .main .common-sidebar:has(.content:hover) .indicator
+	.dashboard-layout .main .sidebar:has(.content:hover) .indicator
 	{
 		transform: translateY(0);
 		transition: transform 0.3s ease-in-out;
+	}
+
+	.dashboard-layout .main .sidebar.open .indicator
+	{
+		transform: translateY(0);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.dashboard-layout .main .sidebar:has(.content:hover)
+	{
+		height: 70%;
+		pointer-events: auto;
+	}
+
+	.dashboard-layout .main .sidebar.force-close .content
+	{
+		transform: translateX(0) translateY(350px) !important;
 	}
 }

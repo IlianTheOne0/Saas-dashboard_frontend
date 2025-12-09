@@ -1,12 +1,18 @@
 .dashboard-layout .desktop-aside
 {
-	max-width: 165px;
+	width: var(--nav-width);
 	height: 100vh;
 
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	z-index: 10;
 }
 
 .dashboard-layout.light .desktop-aside

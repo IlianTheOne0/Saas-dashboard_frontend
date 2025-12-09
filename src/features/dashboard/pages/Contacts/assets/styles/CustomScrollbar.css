@@ -1,0 +1,47 @@
+.dashboard-layout .custom-scrollbar
+{
+	scrollbar-width: thin;
+	scrollbar-color: var(--gray-C40) transparent;
+}
+
+.dashboard-layout .custom-scrollbar::-webkit-scrollbar
+{
+	width: 6px;
+	height: 6px;
+}
+
+.dashboard-layout .custom-scrollbar::-webkit-scrollbar-track
+{
+	background: transparent;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.dashboard-layout .custom-scrollbar::-webkit-scrollbar-thumb
+{
+	background-color: var(--gray-C40);
+	border-radius: 20px;
+}
+
+.dashboard-layout .custom-scrollbar::-webkit-scrollbar-thumb:hover
+{
+	background-color: var(--gray-C60);
+}
+
+.dashboard-layout .dark .custom-scrollbar,
+.dashboard-layout .dark.custom-scrollbar
+{
+	scrollbar-color: var(--white-C20) transparent;
+}
+
+.dashboard-layout .dark .custom-scrollbar::-webkit-scrollbar-thumb,
+.dashboard-layout .dark.custom-scrollbar::-webkit-scrollbar-thumb
+{
+	background-color: var(--white-C20);
+}
+
+.dashboard-layout .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover,
+.dashboard-layout .dark.custom-scrollbar::-webkit-scrollbar-thumb:hover
+{
+	background-color: var(--white-C40);
+}

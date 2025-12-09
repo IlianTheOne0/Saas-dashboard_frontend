@@ -43,7 +43,7 @@ function CommonWrapper({ theme, toggleTheme })
 	);
 
 	const handleToggleTheme = useCallback(() => { toggleTheme(); }, [toggleTheme]);
-	const handleLogout = useCallback(() => { removeAccessToken(); }, []);
+	const handleLogout = useCallback(() => { removeAccessToken(); }, [removeAccessToken]);
 
 	const handleNavigation = useCallback((iconId) => { if (activeTab !== tabsData.find(tab => tab.id === iconId)?.name) { navigate(`/dashboard/${tabsData.find(tab => tab.id === iconId)?.name || ""}`); } }, [navigate, activeTab]);
 
