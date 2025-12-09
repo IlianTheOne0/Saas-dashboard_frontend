@@ -1,0 +1,185 @@
+.dashboard-layout .contacts .item
+{
+	width: 100%;
+	height: 210px;
+
+	position: relative;
+	
+	text-align: center;
+
+	padding: 20px 39px;
+
+	border-radius: 12px;
+
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.dashboard-layout .contacts .item.highlighted
+{
+	box-shadow: 0 0 10px var(--primary-C80);
+}
+
+.dashboard-layout.light .contacts .item
+{
+	background-color: var(--white-C100);
+}
+
+.dashboard-layout.dark .contacts .item
+{
+	background-color: var(--dark_mode-background);
+}
+
+.dashboard-layout .contacts .item .star
+{
+	width: 18px;
+	height: 18px;
+
+	position: absolute;
+	top: 25px;
+	right: 25px;
+
+	cursor: pointer;
+
+	transition: opacity 0.1s ease-in-out;
+}
+
+.dashboard-layout.dark .contacts .item .star.favourite
+{
+	filter: invert(1);
+}
+
+.dashboard-layout .contacts .item .star:hover
+{
+	transition: opacity 0.2s ease-in-out;
+}
+
+.dashboard-layout.light .contacts .item .star:hover
+{
+	opacity: 0.5;
+}
+
+.dashboard-layout.dark .contacts .item .star:hover
+{
+	opacity: 0.7;
+}
+
+.dashboard-layout .contacts .item .avatar
+{
+	width: 58px;
+	height: 58px;
+
+	border-radius: 18.32px;
+	object-fit: cover;
+}
+
+.dashboard-layout .contacts .item .info
+{
+	margin: 20px 0;
+}
+
+.dashboard-layout .contacts .item .info .name
+{
+	margin-bottom: 2px;
+
+	font-family: "FC-Bold", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.dashboard-layout.light .contacts .item .info .name
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .contacts .item .info .name
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .contacts .item .info .role
+{
+	margin-top: 0px;
+
+	font-family: "FC-Regular", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+.dashboard-layout.light .contacts .item .info .role
+{
+	color: var(--gray-C100);
+}
+
+.dashboard-layout.dark .contacts .item .info .role
+{
+	color: var(--dark_mode-text);
+}
+
+.dashboard-layout .contacts .item .message-button
+{
+	width: 95px;
+	height: 30px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	justify-self: center;
+	gap: 5px;
+
+	margin: 0 auto;
+
+	background-color: var(--success-C100);
+	color: var(--white-C100);
+
+	border: none;
+	border-radius: 4px;
+
+	font-family: "FC-Medium", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 20px;
+
+	cursor: pointer;
+}
+
+.dashboard-layout .contacts .item .message-button:hover
+{
+	opacity: 0.8;
+	transition: opacity 0.2s ease-in-out;
+}
+
+@media (max-width: 429px)
+{
+	.dashboard-layout .contacts .item
+	{
+		height: auto;
+
+		padding: 15px 20px;
+	}
+
+	.dashboard-layout .contacts .item .avatar
+	{
+		width: 48px;
+		height: 48px;
+	}
+
+	.dashboard-layout .contacts .item .info .name
+	{
+		font-size: 12px;
+		line-height: 18px;
+	}
+
+	.dashboard-layout .contacts .item .info .role
+	{
+		font-size: 10px;
+		line-height: 18px;
+	}
+
+	.dashboard-layout .contacts .item .message-button
+	{
+		width: 80px;
+		height: 28px;
+
+		font-size: 13px;
+		line-height: 18px;
+	}
+}

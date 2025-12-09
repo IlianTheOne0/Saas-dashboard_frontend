@@ -58,7 +58,7 @@ function NewPassword()
 
 		try
 		{
-			const response = await sendRequest("new_password", { password, accessToken, refreshToken }, "new_password-answer", 15000, KAFKA_CONFIG.TOPICS_PRODUCE_NAMES.find(topic => topic.name === "auth")?.topic);
+			const response = await sendRequest("new_password", { password, accessToken, refreshToken }, "new_password-answer", 15000, KAFKA_CONFIG.TOPICS_PRODUCER_NAMES.find(topic => topic.name === "auth")?.topic);
 			console.log(response);
 			if (response?.status.toLowerCase() === "success") { alert("Your password has been successfully updated."); navigate("/auth/login"); }
 			else { alert("Failed to update password. Please try again later."); }

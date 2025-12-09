@@ -20,7 +20,7 @@ function Recovery()
 	
 	const navigate = useNavigate();
 
-	const [email, setEmail] = useState(location.state?.email || "iliantheone@gmail.com");
+	const [email, setEmail] = useState(location.state?.email || "");
 
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -43,7 +43,7 @@ function Recovery()
 
 		try
 		{
-			const response = await sendRequest("recovery_password", { email }, "recovery_password-answer", 15000, KAFKA_CONFIG.TOPICS_PRODUCE_NAMES.find(topic => topic.name === "auth")?.topic);
+			const response = await sendRequest("recovery_password", { email }, "recovery_password-answer", 15000, KAFKA_CONFIG.TOPICS_PRODUCER_NAMES.find(topic => topic.name === "auth")?.topic);
 			if (response?.status.toLowerCase() === "success") { alert("A recovery email has been sent to your email address."); navigate("/auth/login"); }
 			else { alert("Failed to send recovery email. Please try again later."); }
 		}

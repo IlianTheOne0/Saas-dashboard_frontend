@@ -12,7 +12,7 @@ function useDebounce(value, delay)
 			return () => { clearTimeout(handler); };
 		},
 		[value, delay]
-	)
+	);
 
 	return debouncedValue;
 }

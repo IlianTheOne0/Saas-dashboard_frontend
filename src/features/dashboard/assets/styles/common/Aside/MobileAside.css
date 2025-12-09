@@ -17,6 +17,10 @@
 		left: 0;
 
 		border-radius: 32px 32px 0 0;
+
+		z-index: 10;
+
+		transition: transform 0.3s ease-in-out;
 	}
 
 	.dashboard-layout.light .mobile-aside
@@ -27,5 +31,11 @@
 	.dashboard-layout.dark .mobile-aside
 	{
 		background-color: var(--dark_mode-background);
+	}
+
+	.dashboard-layout .main:has(.sidebar .content:hover) .mobile-aside
+	{
+		transform: translateY(100px);
+		transition: transform 0.3s ease-in-out;
 	}
 }

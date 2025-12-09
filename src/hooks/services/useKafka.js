@@ -27,11 +27,10 @@ function useKafka()
 			(resolve, reject) =>
 			{
 				const correlationId = generateUUID();
-
 				const handler = responseData =>
 				{
 					if (responseData.correlationId !== correlationId) { return; }
-
+					
 					clearTimeout(timer);
 					removeEventListener(responseEvent, handler);
 					

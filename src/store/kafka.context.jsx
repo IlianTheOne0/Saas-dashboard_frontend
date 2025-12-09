@@ -61,7 +61,7 @@ function KafkaProvider({ children })
 
 	const sendMessage = useCallback
 	(
-		async (event, data, topic = KAFKA_CONFIG.TOPICS_PRODUCE_NAMES[0].topic, correlationId = null) =>
+		async (event, data, topic = KAFKA_CONFIG.TOPICS_PRODUCER_NAMES[0].topic, correlationId = null) =>
 		{
 			const cid = correlationId || generateUUID();
 
