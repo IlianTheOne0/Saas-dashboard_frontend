@@ -1,36 +1,36 @@
 const mockData =
 {
-	"highlights":
+	highlights:
 	[
 		{
-			"defaultIconPath": "./assets/images/"
+			defaultIconPath: "./assets/images/"
 		},
 		{
-			"title": "total sessions",
-			"value": "36.1K",
-			"bckgColor": "success",
-			"iconPath": "sessions.svg"
+			title: "total sessions",
+			value: "36.1K",
+			bckgColor: "success",
+			iconPath: "sessions.svg"
 		},
 		{
-			"title": "total visitors",
-			"value": "2,642",
-			"bckgColor": "primary",
-			"iconPath": "visitors.svg",
-			"isIncrease": true,
-			"percentage": "10%"
+			title: "total visitors",
+			value: "2,642",
+			bckgColor: "primary",
+			iconPath: "visitors.svg",
+			isIncrease: true,
+			percentage: "10%"
 		},
 		{
-			"title": "avg time spend",
-			"value": "3.21",
-			"bckgColor": "error",
-			"iconPath": "time.svg",
-			"isIncrease": false,
-			"percentage": "3%"
+			title: "avg time spend",
+			value: "3.21",
+			bckgColor: "error",
+			iconPath: "time.svg",
+			isIncrease: false,
+			percentage: "3%"
 		}
 	],
-	"chart":
+	chart:
 	{
-		"today":
+		today:
 		[
 			{ time: "9:00", value: 15 },
 			{ time: "10:00", value: 25 },
@@ -72,15 +72,15 @@ const mockData =
 			{ time: "Week 4", value: 210 }
 		]
 	},
-	"bottomCards":
+	bottomCards:
 	[
 		{
-			"id": "new-users",
-			"title": "New Users",
-			"value": "1,501m",
-			"color": "#E45851",
-			"data": {
-				"today": [
+			id: "new-users",
+			title: "New Users",
+			value: "1,501m",
+			color: "#E45851",
+			data: {
+				today: [
 					{ index: 1, value: 2 },
 					{ index: 2, value: 5 },
 					{ index: 3, value: 4 },
@@ -115,12 +115,12 @@ const mockData =
 			}
 		},
 		{
-			"id": "bounce-rate",
-			"title": "Bounce Rate",
-			"value": "0.66%",
-			"color": "#FDDE69",
-			"data": {
-				"today": [
+			id: "bounce-rate",
+			title: "Bounce Rate",
+			value: "0.66%",
+			color: "#FDDE69",
+			data: {
+				today: [
 					{ index: 1, value: 15 },
 					{ index: 2, value: 16 },
 					{ index: 3, value: 14 },
@@ -154,10 +154,64 @@ const mockData =
 				]
 			}
 		}
-	]
+	],
+	sidebar:
+	{
+		audience:
+		{
+			platforms:
+			[
+				{ name: "Windows", value: "45%", icon: "windows.svg" },
+				{ name: "Mac OS", value: "25%", icon: "mac.svg" },
+				{ name: "Linux", value: "10%", icon: "linux.svg" },
+				{ name: "Android", value: "20%", icon: "android.svg" }
+			],
+			browsers:
+			[
+				{ name: "Chrome", value: "68%", icon: "chrome.svg" },
+				{ name: "Edge", value: "15%", icon: "edge.svg" },
+				{ name: "Opera", value: "6%", icon: "opera.svg" },
+				{ name: "Firefox", value: "11%", icon: "firefox.svg" }
+			]
+		},
+		realtime:
+		{
+			activeUsers: 289,
+			chartData:
+			[
+				{ index: 1, value: 10 },
+				{ index: 2, value: 15 },
+				{ index: 3, value: 12 },
+				{ index: 4, value: 20 },
+				{ index: 5, value: 18 },
+				{ index: 6, value: 25 }
+			],
+			activeUsers: 289,
+			chartData:
+			[
+				{ index: 1, value: 10 },
+				{ index: 2, value: 15 },
+				{ index: 3, value: 12 },
+				{ index: 4, value: 20 },
+				{ index: 5, value: 18 },
+				{ index: 6, value: 25 },
+				{ index: 7, value: 22 },
+				{ index: 8, value: 30 },
+				{ index: 9, value: 28 },
+				{ index: 10, value: 35 }
+			]
+		},
+		languages:
+		[
+			{ name: "English", value: 43, color: "#FDDE69" },
+			{ name: "Chinese", value: 38, color: "#62CA76" },
+			{ name: "Spanish", value: 19, color: "#E45851" }
+		]
+	}
 }
 
 import Sidebar from "../../../../components/common/Sidebar/Sidebar";
+import SidebarContent from "./components/SidebarContent";
 import HiglightItem from "./components/HiglightItem";
 import Chart from "./components/Chart";
 import BottomCard from "./components/BottomCard";
@@ -204,7 +258,9 @@ function Dashboard()
 				}
 			</section>
 
-			<Sidebar/>
+			<Sidebar>
+				<SidebarContent data={mockData.sidebar}/>
+			</Sidebar>
 		</div>
 	);
 }
