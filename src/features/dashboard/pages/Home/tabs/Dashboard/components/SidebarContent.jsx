@@ -128,8 +128,8 @@ function SidebarContent({ data })
 
 	const getIcon = (name) =>
 	{
-		try { return require(`https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/src/features/dashboard/pages/Home/tabs/Dashboard/assets/images/${name}`); }
-		catch (error) { return null; }
+		if (!name) { return null; }
+		return `https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/features/dashboard_home/src/features/dashboard/pages/Home/tabs/Dashboard/assets/images/${name}`;
 	};
 
 	if (!data) { return null; }

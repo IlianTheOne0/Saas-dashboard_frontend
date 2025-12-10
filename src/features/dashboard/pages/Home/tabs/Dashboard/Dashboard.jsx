@@ -162,7 +162,7 @@ const mockData =
 			platforms:
 			[
 				{ name: "Windows", value: "45%", icon: "windows.svg" },
-				{ name: "Mac OS", value: "25%", icon: "mac.svg" },
+				{ name: "Mac OS", value: "25%", icon: "apple.svg" },
 				{ name: "Linux", value: "10%", icon: "linux.svg" },
 				{ name: "Android", value: "20%", icon: "android.svg" }
 			],

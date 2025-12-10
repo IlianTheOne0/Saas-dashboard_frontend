@@ -157,18 +157,6 @@
 	border-radius: 8px;
 }
 
-.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box.windows { background-color: #0078D7; }
-.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box.mac { background-color: #333333; }
-.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box.linux { background-color: #FCC624; }
-.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box.android { background-color: #3DDC84; }
-.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box.ios { background-color: #000000; }
-
-.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box.chrome { background-color: #FFC107; border-radius: 50%; }
-.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box.edge { background-color: #0078D7; border-radius: 50%; }
-.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box.opera { background-color: #FF1B2D; border-radius: 50%; }
-.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box.firefox { background-color: #FF7139; border-radius: 50%; }
-.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box.safari { background-color: #00AEEF; border-radius: 50%; }
-
 .dashboard-layout .sidebar .content-wrapper .mini-card .meta
 {
 	display: flex;
@@ -319,4 +307,28 @@
 .dashboard-layout .sidebar .content-wrapper .see-all-btn:hover
 {
 	text-decoration: underline;
+}
+
+.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box
+{
+	width: 40px;
+	height: 40px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	background-color: var(--gray-C20); 
+	
+	border-radius: 10px;
+}
+
+.dashboard-layout .sidebar .content-wrapper .mini-card .icon-box img
+{
+	width: 20px;
+	height: 20px;
+
+	display: block;
+	
+	object-fit: contain;
 }
