@@ -115,21 +115,20 @@ function Chart({ data })
 						valueYField: "value",
 						categoryXField: "time",
 						tension: 0.3,
-						tooltip: am5.Tooltip.new(root, { labelText: "{valueY}" })
+						tooltip: am5.Tooltip.new(root, { labelText: "{valueY}" }),
+						stroke: colorGreen,
+						fill: colorGreen
 					}
 				)
 			);
 
-			series.strokes.template.setAll({ strokeWidth: 3, stroke: colorGreen });
+			series.strokes.template.setAll({ strokeWidth: 3 });
+
 			series.fills.template.setAll
 			(
 				{
 					fillOpacity: 1,
-					visible: true,
-					fillGradient: am5.LinearGradient.new
-						(
-							root, { stops: [{ color: colorGreen, opacity: 0.5 }, { color: colorGreen, opacity: 0.05 }], rotation: 90 }
-						)
+					visible: true
 				}
 			);
 

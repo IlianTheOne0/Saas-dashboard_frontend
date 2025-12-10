@@ -71,12 +71,96 @@ const mockData =
 			{ time: "Week 3", value: 160 },
 			{ time: "Week 4", value: 210 }
 		]
-	}
+	},
+	"bottomCards":
+	[
+		{
+			"id": "new-users",
+			"title": "New Users",
+			"value": "1,501m",
+			"color": "#E45851",
+			"data": {
+				"today": [
+					{ index: 1, value: 2 },
+					{ index: 2, value: 5 },
+					{ index: 3, value: 4 },
+					{ index: 4, value: 8 },
+					{ index: 5, value: 6 },
+					{ index: 6, value: 9 },
+					{ index: 7, value: 12 }
+				],
+				"7d": [
+					{ index: 1, value: 10 },
+					{ index: 2, value: 12 },
+					{ index: 3, value: 11 },
+					{ index: 4, value: 15 },
+					{ index: 5, value: 20 },
+					{ index: 6, value: 18 },
+					{ index: 7, value: 22 }
+				],
+				"2w": [
+					{ index: 1, value: 15 },
+					{ index: 2, value: 18 },
+					{ index: 3, value: 14 },
+					{ index: 4, value: 22 },
+					{ index: 5, value: 19 },
+					{ index: 6, value: 25 }
+				],
+				"1m": [
+					{ index: 1, value: 40 },
+					{ index: 2, value: 55 },
+					{ index: 3, value: 48 },
+					{ index: 4, value: 60 }
+				]
+			}
+		},
+		{
+			"id": "bounce-rate",
+			"title": "Bounce Rate",
+			"value": "0.66%",
+			"color": "#FDDE69",
+			"data": {
+				"today": [
+					{ index: 1, value: 15 },
+					{ index: 2, value: 16 },
+					{ index: 3, value: 14 },
+					{ index: 4, value: 15 },
+					{ index: 5, value: 18 },
+					{ index: 6, value: 17 },
+					{ index: 7, value: 16 }
+				],
+				"7d": [
+					{ index: 1, value: 20 },
+					{ index: 2, value: 22 },
+					{ index: 3, value: 18 },
+					{ index: 4, value: 19 },
+					{ index: 5, value: 25 },
+					{ index: 6, value: 24 },
+					{ index: 7, value: 30 }
+				],
+				"2w": [
+					{ index: 1, value: 28 },
+					{ index: 2, value: 26 },
+					{ index: 3, value: 30 },
+					{ index: 4, value: 25 },
+					{ index: 5, value: 29 },
+					{ index: 6, value: 32 }
+				],
+				"1m": [
+					{ index: 1, value: 55 },
+					{ index: 2, value: 50 },
+					{ index: 3, value: 58 },
+					{ index: 4, value: 52 }
+				]
+			}
+		}
+	]
 }
 
 import Sidebar from "../../../../components/common/Sidebar/Sidebar";
 import HiglightItem from "./components/HiglightItem";
 import Chart from "./components/Chart";
+import BottomCard from "./components/BottomCard";
 
 import "./assets/styles/Dashboard.css";
 import "../../../../assets/styles/CustomScrollbar.css";
@@ -106,6 +190,18 @@ function Dashboard()
 
 			<section className="chart-section">
 				<Chart data={mockData.chart}/>
+			</section>
+
+			<section className="bottom-cards-section">
+				{
+					mockData.bottomCards.map
+					(
+						(card) =>
+						(
+							<BottomCard key={card.id} id={card.id} title={card.title} value={card.value} colorHex={card.color} chartData={card.data}/>
+						)
+					)
+				}
 			</section>
 
 			<Sidebar/>
