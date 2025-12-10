@@ -5,6 +5,9 @@
 
 	position: relative;
 
+	display: flex;
+	flex-direction: column;
+
 	padding: 20px;
 	
 	flex-grow: 1;
@@ -40,5 +43,14 @@
 
 .dashboard-layout.dark .home .overlay.tab-selector-open
 {
-	background-color: var(--primary-C20);
+	background-color: var(--white-C20);
+}
+
+.dashboard-layout .home .tab-body
+{
+	width: 100%;
+	min-height: 0;
+
+	position: relative;
+	flex: 1;
 }

@@ -1,6 +1,6 @@
 .dashboard-layout .custom-select-wrapper
 {
-	width: 200px;
+	width: 250px;
 
 	position: relative;
 
@@ -41,14 +41,15 @@
 
 .dashboard-layout.dark .custom-select-wrapper.open .select-trigger
 {
-	background-color: var(--light_gray-C20);
+	background-color: var(--dark-C100);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .dashboard-layout .custom-select-wrapper .trigger-text
 {
 	font-family: "FC-Bold", Arial, Helvetica, sans-serif;
-	font-size: 16px;
+	font-size: 30px;
+	line-height: 36px;
 }
 
 .dashboard-layout.light .custom-select-wrapper .trigger-text
@@ -97,7 +98,7 @@
 
 .dashboard-layout.dark .custom-select-wrapper .select-options
 {
-	background-color: var(--light_gray-C20);
+	background-color: var(--dark-C100);
 }
 
 .dashboard-layout .custom-select-wrapper .option
@@ -137,7 +138,7 @@
 
 .dashboard-layout.dark .custom-select-wrapper .option:hover
 {
-	background-color: var(--dark-C40);
+	background-color: var(--gray-C40);
 	color: var(--white-C80);
 }
 
