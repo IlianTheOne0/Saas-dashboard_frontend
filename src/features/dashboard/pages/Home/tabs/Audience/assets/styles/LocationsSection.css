@@ -1,0 +1,159 @@
+.dashboard-layout .home .audience-tab .locations-section-card
+{
+	width: 100%;
+	height: 100%;
+	
+	display: flex;
+	flex-direction: column;
+
+	padding: 30px;
+	
+	border-radius: 12px;
+}
+
+.dashboard-layout.light .home .audience-tab .locations-section-card
+{
+	background-color: var(--white-C100);
+}
+
+.dashboard-layout.dark .home .audience-tab .locations-section-card
+{
+	background-color: var(--dark_mode-background);
+}
+
+.dashboard-layout .home .audience-tab .locations-section-card .section-title
+{
+	margin: 0 0 20px 0;
+	
+	font-family: "FC-Bold", sans-serif;
+	font-size: 20px;
+}
+
+.dashboard-layout.light .home .audience-tab .locations-section-card .section-title
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .home .audience-tab .locations-section-card .section-title
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .home .audience-tab .locations-section-card .locations-content
+{
+	min-height: 0;
+	
+	display: flex;
+	flex: 1;
+	align-items: center;
+	gap: 40px;
+}
+
+.dashboard-layout .home .audience-tab .locations-section-card .map-wrapper
+{
+	height: 100%;
+	width: 100%; 
+	min-height: 250px;
+	
+	position: relative; 
+	flex: 1.5;
+	
+	border-radius: 12px;
+	
+	overflow: hidden;
+}
+
+#audience-map-div.map-chart
+{
+	width: 100%;
+	height: 100%;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.dashboard-layout .home .audience-tab .locations-section-card .list-wrapper
+{
+	width: 100%;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 20px;
+	flex: 1;
+}
+
+.dashboard-layout .home .audience-tab .locations-section-card .location-row
+{
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.dashboard-layout .home .audience-tab .locations-section-card .row-info
+{
+	display: flex;
+	justify-content: space-between;
+	
+	font-family: "FC-Medium", sans-serif;
+	font-size: 14px;
+}
+
+.dashboard-layout.light .home .audience-tab .locations-section-card .row-info
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .home .audience-tab .locations-section-card .row-info
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .home .audience-tab .locations-section-card .progress-track
+{
+	width: 100%;
+	height: 6px;
+	
+	background-color: var(--gray-C20);
+	
+	border-radius: 100px;
+	
+	overflow: hidden;
+}
+
+.dashboard-layout.dark .home .audience-tab .locations-section-card .progress-track
+{
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-layout .home .audience-tab .locations-section-card .progress-bar
+{
+	height: 100%;
+	border-radius: 100px;
+}
+
+@media (max-width: 429px)
+{
+	.dashboard-layout .home .audience-tab .locations-section-card
+	{
+		padding: 20px;
+	}
+
+	.dashboard-layout .home .audience-tab .locations-section-card .locations-content
+	{
+		flex-direction: column;
+		gap: 30px;
+	}
+	
+	.dashboard-layout .home .audience-tab .locations-section-card .map-wrapper
+	{
+		flex: none;
+		height: 250px;
+	}
+
+	.dashboard-layout .home .audience-tab .locations-section-card .list-wrapper
+	{
+		flex: none;
+	}
+}

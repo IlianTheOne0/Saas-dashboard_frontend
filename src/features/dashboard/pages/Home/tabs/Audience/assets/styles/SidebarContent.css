@@ -1,0 +1,162 @@
+.dashboard-layout .home .audience-sidebar
+{
+	width: 100%;
+	height: 100%;
+	
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	
+	padding-right: 10px;
+	padding-bottom: 20px;
+	
+	color: var(--white-C100);
+	
+	overflow-y: auto; 
+	overflow-x: hidden;
+}
+
+.dashboard-layout .home .audience-sidebar .section-title
+{
+	margin: 0 0 20px 0;
+
+	color: var(--white-C100);
+	
+	font-family: "FC-Bold", sans-serif;
+	font-size: 18px;
+}
+
+.dashboard-layout .home .audience-sidebar .resolution-list
+{
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.dashboard-layout .home .audience-sidebar .res-item
+{
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.dashboard-layout .home .audience-sidebar .res-info
+{
+	display: flex;
+	justify-content: space-between;
+	font-family: "FC-Medium", sans-serif;
+	font-size: 14px;
+}
+
+.dashboard-layout .home .audience-sidebar .res-info .res-name
+{
+	font-family: "FC-Regular", sans-serif;
+}
+
+.dashboard-layout .home .audience-sidebar .res-info .val
+{
+	font-family: "FC-Bold", sans-serif;
+}
+
+.dashboard-layout .home .audience-sidebar .res-item .progress-bg
+{
+	width: 100%;
+	height: 6px;
+
+	background-color: rgba(255, 255, 255, 0.1);
+	
+	border-radius: 100px;
+}
+
+.dashboard-layout .home .audience-sidebar .res-item .progress-fill
+{
+	height: 100%;
+	background-color: var(--white-C100);
+	border-radius: 100px;
+}
+
+.dashboard-layout .home .audience-sidebar .divider
+{
+	width: 100%;
+	height: 1px;
+	
+	background-color: rgba(255, 255, 255, 0.1);
+	
+	flex-shrink: 0;
+}
+
+.dashboard-layout .home .audience-sidebar .chart-container
+{
+	height: 200px;
+	width: 100%;
+}
+
+.dashboard-layout .home .audience-sidebar #audience-sidebar-chart
+{
+	width: 100%;
+	height: 100%;
+}
+
+.dashboard-layout .home .audience-sidebar .age-legend
+{
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-top: 10px;
+}
+
+.dashboard-layout .home .audience-sidebar .legend-item
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.dashboard-layout .home .audience-sidebar .legend-item .icon-box
+{
+	width: 48px;
+	height: 48px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 12px;
+
+	background-color: var(--dark-C20);
+}
+
+.dashboard-layout .home .audience-sidebar .legend-info
+{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	margin-left: 12px;
+}
+
+.dashboard-layout .home .audience-sidebar .legend-info .label
+{
+	font-family: "FC-Medium", sans-serif;
+	font-size: 12px;
+	opacity: 0.8;
+}
+
+.dashboard-layout .home .audience-sidebar .legend-info .val
+{
+	font-family: "FC-Bold", sans-serif;
+	font-size: 18px;
+}
+
+.dashboard-layout .home .audience-sidebar .legend-item .change
+{
+	font-family: "FC-Bold", sans-serif;
+	font-size: 12px;
+}
+
+.dashboard-layout .home .audience-sidebar .legend-item .change.increase
+{
+	color: #62CA76;
+}
+.dashboard-layout .home .audience-sidebar .legend-item .change.decrease
+{
+	color: #E45851;
+}
