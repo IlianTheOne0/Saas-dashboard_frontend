@@ -55,7 +55,7 @@
 .dashboard-layout .home .dashboard-tab .bottom-card .dropdown-container
 {
 	position: relative;
-	z-index: 5;
+	z-index: auto;
 }
 
 .dashboard-layout .home .dashboard-tab .bottom-card .header .dropdown
@@ -113,7 +113,8 @@
 	gap: 2px;
 	
 	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-	z-index: 100;
+
+	z-index: 7;
 }
 
 .dashboard-layout.light .home .dashboard-tab .bottom-card .dropdown-menu
