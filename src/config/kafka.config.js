@@ -1,6 +1,5 @@
 const KAFKA_CONFIG =
 {
-	// BASE_URL: "http://172.29.112.1:8082",
 	BASE_URL: "http://172.20.10.5:8082",
 	// BASE_URL: "http://localhost:8082",
 

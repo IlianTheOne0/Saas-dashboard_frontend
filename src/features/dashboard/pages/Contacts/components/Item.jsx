@@ -9,7 +9,7 @@ function Item({ contact, isFavourite, onStarClick, className, id })
 {
 	return (
 		<div className={`item ${className || ""}`} id={`contact-item-${id || ""}`}>
-			{isFavourite ? <img className="star favourite" src={Star} alt="Star" onClick={() => onStarClick(contact.Id)} /> : <img className="star" src={StarOutlined} alt="Star" onClick={() => onStarClick(contact.Id)} />}
+			{isFavourite ? <img className="star favourite" src={Star} alt="Star" onClick={() => onStarClick(contact.Id)}/> : <img className="star" src={StarOutlined} alt="Star" onClick={() => onStarClick(contact.Id)}/>}
 			
 			<img className="avatar" src={contact?.AvatarUrl || DefaultAvatar} alt="User's avatar"/>
 

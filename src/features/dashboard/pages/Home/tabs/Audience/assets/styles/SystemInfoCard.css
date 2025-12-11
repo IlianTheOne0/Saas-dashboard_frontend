@@ -1,0 +1,135 @@
+.dashboard-layout .home .audience-tab .system-info-card
+{
+	padding: 24px;
+	border-radius: 12px;
+}
+
+.dashboard-layout.light .home .audience-tab .system-info-card
+{
+	background-color: var(--white-C100);
+}
+
+.dashboard-layout.dark .home .audience-tab .system-info-card
+{
+	background-color: var(--dark_mode-background);
+}
+
+.dashboard-layout .home .audience-tab .system-info-card .card-title
+{
+	margin: 0 0 20px 0;
+
+	font-family: "FC-Bold", sans-serif;
+	font-size: 18px;
+}
+
+.dashboard-layout.light .home .audience-tab .system-info-card .card-title { color: var(--dark-C100); }
+.dashboard-layout.dark .home .audience-tab .system-info-card .card-title { color: var(--white-C100); }
+
+.dashboard-layout .home .audience-tab .system-info-card .items-list
+{
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.dashboard-layout .home .audience-tab .system-row-container
+{
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.dashboard-layout .home .audience-tab .sys-item .info-row
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.dashboard-layout .home .audience-tab .sys-item .left
+{
+	width: 30%;
+	min-width: 120px;
+
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.dashboard-layout .home .audience-tab .sys-item .icon
+{
+	width: 20px;
+	height: 20px;
+}
+
+.dashboard-layout .home .audience-tab .sys-item .name
+{
+	font-family: "FC-Medium", sans-serif;
+	font-size: 14px;
+}
+
+.dashboard-layout.light .home .audience-tab .sys-item .name { color: var(--dark-C100); }
+.dashboard-layout.dark .home .audience-tab .sys-item .name { color: var(--white-C100); }
+
+.dashboard-layout .home .audience-tab .sys-item .right
+{
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	flex: 1;
+}
+
+.dashboard-layout .home .audience-tab .sys-item .progress-bg
+{
+	height: 6px;
+	
+	flex: 1;
+	
+	background-color: var(--gray-C20);
+	
+	border-radius: 10px;
+	
+	overflow: hidden;
+}
+
+.dashboard-layout.dark .home .audience-tab .sys-item .progress-bg
+{
+	background-color: rgba(255,255,255,0.1);
+}
+
+.dashboard-layout .home .audience-tab .sys-item .progress-fill
+{
+	height: 100%;
+	border-radius: 10px;
+}
+
+.dashboard-layout .home .audience-tab .sys-item .percentage
+{
+	min-width: 35px;
+	
+	font-family: "FC-Bold", sans-serif;
+	font-size: 14px;
+	text-align: right;
+}
+
+.dashboard-layout.light .home .audience-tab .sys-item .percentage
+{
+	color: var(--dark-C100);
+}
+.dashboard-layout.dark .home .audience-tab .sys-item .percentage
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .home .audience-tab .splitter
+{
+	width: 100%;
+	height: 1px;
+
+	background-color: var(--gray-C20);
+}
+
+.dashboard-layout.dark .home .audience-tab .splitter
+{
+	background-color: rgba(255,255,255,0.1);
+}

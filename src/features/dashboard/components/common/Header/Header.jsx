@@ -31,7 +31,7 @@ const Header = memo
 		
 		return (
 			<>
-				<DesktopHeader handleNavigation={handleNavigation} isLoading={isLoading} userData={userData} />
+				<DesktopHeader handleNavigation={handleNavigation} isLoading={isLoading} userData={userData}/>
 				<MobileHeader tabsData={tabsData} asideData={asideData} activeTab={activeTab} handleNavigation={handleNavigation} handleToggleTheme={handleToggleTheme} handleLogout={handleLogout} getIconUrl={getIconUrl} theme={theme}/>
 			</>
 		);

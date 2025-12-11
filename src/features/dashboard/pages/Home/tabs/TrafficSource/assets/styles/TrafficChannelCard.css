@@ -1,0 +1,259 @@
+.dashboard-layout .home .traffic-source-tab .traffic-channel-card
+{
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	padding: 24px 32px;
+
+	border-radius: 12px;
+}
+
+.dashboard-layout.light .home .traffic-source-tab .traffic-channel-card
+{
+	background-color: var(--white-C100);
+	box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.dashboard-layout.dark .home .traffic-source-tab .traffic-channel-card
+{
+	background-color: var(--dark_mode-background);
+}
+
+.dashboard-layout .home .traffic-source-tab .traffic-channel-card .header
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	margin-bottom: 30px;
+}
+
+.dashboard-layout .home .traffic-source-tab .traffic-channel-card .title
+{
+	margin: 0;
+	
+	font-family: "FC-Bold", sans-serif;
+	font-size: 18px;
+	
+	color: inherit;
+}
+
+.dashboard-layout.light .home .traffic-source-tab .traffic-channel-card .title
+{
+	color: var(--dark-C100);
+}
+.dashboard-layout.dark .home .traffic-source-tab .traffic-channel-card .title
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .home .traffic-source-tab .time-toggles
+{
+	display: flex;
+	gap: 12px;
+}
+
+.dashboard-layout .home .traffic-source-tab .time-toggles button
+{
+	padding: 6px 12px;
+
+	background: transparent;
+	color: var(--gray-C100);
+
+	font-family: "FC-Medium", sans-serif;
+	font-size: 14px;
+	
+	border: none;
+	border-radius: 8px;
+	
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.dashboard-layout .home .traffic-source-tab .time-toggles button:hover
+{
+	color: var(--primary-C100);
+}
+
+.dashboard-layout.light .home .traffic-source-tab .time-toggles button.active
+{
+	background-color: var(--white-C100);
+	color: var(--dark-C100);
+
+	border: 1px solid var(--gray-C40);
+}
+
+.dashboard-layout.dark .home .traffic-source-tab .time-toggles button.active
+{
+	color: var(--white-C100);
+	border: 1px solid var(--white-C20);
+}
+
+.dashboard-layout .home .traffic-source-tab .stats-row
+{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+
+	margin-bottom: 30px;
+}
+
+.dashboard-layout .home .traffic-source-tab .stat-item
+{
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.dashboard-layout .home .traffic-source-tab .stat-item .label
+{
+	color: var(--gray-C100);
+	
+	font-family: "FC-Medium", sans-serif;
+	font-size: 14px;
+}
+
+.dashboard-layout .home .traffic-source-tab .stat-item .value
+{
+	font-family: "FC-Bold", sans-serif;
+	font-size: 30px;
+}
+
+.dashboard-layout.light .home .traffic-source-tab .stat-item .value
+{
+	color: var(--dark-C100);
+}
+.dashboard-layout.dark .home .traffic-source-tab .stat-item .value
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .home .traffic-source-tab .stat-item .change
+{
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	
+	font-family: "FC-Bold", sans-serif;
+	font-size: 12px;
+}
+
+.dashboard-layout .home .traffic-source-tab .stat-item .change.increase
+{
+	color: var(--success-C100);
+}
+.dashboard-layout .home .traffic-source-tab .stat-item .change.decrease
+{
+	color: var(--error-C100);
+}
+
+.dashboard-layout .home .traffic-source-tab .main-chart-container
+{
+	width: 100%;
+	height: 350px;
+	position: relative;
+}
+
+#traffic-main-chart
+{
+	width: 100%;
+	height: 100%;
+}
+
+.dashboard-layout .home .traffic-source-tab .chart-footer
+{
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	
+	margin-top: 10px;
+}
+
+.dashboard-layout .home .traffic-source-tab .legend-item
+{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	
+	font-family: "FC-Bold", sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.dashboard-layout.light .home .traffic-source-tab .legend-item
+{
+	color: var(--dark-C100);
+}
+.dashboard-layout.dark .home .traffic-source-tab .legend-item
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .home .traffic-source-tab .legend-dot
+{
+	width: 10px;
+	height: 10px;
+	
+	border-radius: 50%;
+}
+
+@media (max-width: 429px)
+{
+	.dashboard-layout .home .traffic-source-tab .stats-row
+	{
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px;
+	}
+
+	.dashboard-layout .home .traffic-source-tab .traffic-channel-card
+	{
+		padding: 20px;
+	}
+
+	.dashboard-layout .home .traffic-source-tab .traffic-channel-card .title
+	{
+		font-size: 16px;
+	}
+
+	.dashboard-layout .home .traffic-source-tab .time-toggles button
+	{
+		padding: 4px 8px;
+		font-size: 11px;
+	}
+
+	.dashboard-layout .home .traffic-source-tab .time-toggles
+	{
+		gap: 6px;
+	}
+
+	.dashboard-layout .home .traffic-source-tab .stat-item
+	{
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		align-items: center
+	}
+
+	.dashboard-layout .home .traffic-source-tab .stat-item .label
+	{
+		font-size: 12px;
+	}
+
+	.dashboard-layout .home .traffic-source-tab .stat-item .value
+	{
+		font-size: 24px;
+	}
+
+	.dashboard-layout .home .traffic-source-tab .main-chart-container
+	{
+		height: 250px;
+	}
+
+	.dashboard-layout .home .traffic-source-tab .chart-footer
+	{
+		gap: 15px;
+		flex-wrap: wrap;
+	}
+}

@@ -1,0 +1,147 @@
+.dashboard-layout .home .realtime-tab .counter-card
+{
+	height: 100%;
+	
+	display: flex;
+	flex-direction: column;
+	
+	padding: 24px;
+	
+	border-radius: 12px;
+}
+
+.dashboard-layout.light .home .realtime-tab .counter-card
+{
+	background-color: var(--white-C100);
+
+	box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.dashboard-layout.dark .home .realtime-tab .counter-card
+{
+	background-color: var(--dark_mode-background);
+}
+
+.dashboard-layout .home .realtime-tab .counter-card .card-title
+{
+	margin: 0;
+	margin-bottom: 20px;
+
+	font-family: "FC-Bold", Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.dashboard-layout.light .home .realtime-tab .counter-card .card-title
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .home .realtime-tab .counter-card .card-title
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .home .realtime-tab .counter-content
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 1;
+}
+
+.dashboard-layout .home .realtime-tab .active-users-count
+{
+	margin: 20px 0 10px 0;
+
+	font-family: "FC-Bold", sans-serif;
+	font-size: 96px;
+	line-height: 1;
+}
+
+.dashboard-layout.light .home .realtime-tab .active-users-count
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .home .realtime-tab .active-users-count
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .home .realtime-tab .sub-label
+{
+	margin-bottom: 40px;
+	
+	color: var(--gray-C100);
+	
+	font-family: "FC-Medium", sans-serif;
+	font-size: 14px;
+}
+
+.dashboard-layout .home .realtime-tab .progress-container
+{
+	width: 100%;
+}
+
+.dashboard-layout .home .realtime-tab .progress-bar
+{
+	width: 100%;
+	height: 36px;
+
+	margin-bottom: 16px;
+
+	border-radius: 8px;
+	display: flex;
+	overflow: hidden;
+}
+
+.dashboard-layout .home .realtime-tab .progress-segment
+{
+	height: 100%;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	color: var(--white-C100);
+
+	font-family: "FC-Bold", sans-serif;
+	font-size: 12px;
+}
+
+.dashboard-layout .home .realtime-tab .legend
+{
+	display: flex;
+	gap: 20px;
+}
+
+.dashboard-layout .home .realtime-tab .legend-item
+{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	
+	font-family: "FC-Bold", sans-serif;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.dashboard-layout.light .home .realtime-tab .legend-item
+{
+	color: var(--dark-C80);
+}
+
+.dashboard-layout.dark .home .realtime-tab .legend-item
+{
+	color: var(--white-C80);
+}
+
+.dashboard-layout .home .realtime-tab .dot
+{
+	width: 8px;
+	height: 8px;
+	
+	border-radius: 50%;
+}

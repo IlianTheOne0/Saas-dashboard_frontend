@@ -47,7 +47,7 @@ function App()
 							</Route>
 
 							<Route path="dashboard" element={<DashboardLayout/>}>
-								<Route path="home" element={<div>Feed Page</div>}/>
+								<Route path="home" element={<DashboardPages.Home/>}/>
 								<Route path="chat" element={<div>Comment Page</div>}/>
 								<Route path="calendar" element={<div>Calendar Page</div>}/>
 								<Route path="appointments" element={<div>Timelinechart Page</div>}/>

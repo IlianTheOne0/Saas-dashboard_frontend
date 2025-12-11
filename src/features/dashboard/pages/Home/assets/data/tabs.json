@@ -1,0 +1,9 @@
+{
+	"tabs":
+	[
+		{ "id": 1, "name": "dashboard" },
+		{ "id": 2, "name": "realtime" },
+		{ "id": 3, "name": "audience" },
+		{ "id": 4, "name": "traffic source" }
+	]
+}

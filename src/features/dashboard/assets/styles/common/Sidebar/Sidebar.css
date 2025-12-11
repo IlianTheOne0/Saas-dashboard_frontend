@@ -9,7 +9,7 @@
 	
 }
 
-.dashboard-layout .main .indicator
+.dashboard-layout .main .sidebar .indicator
 {
 	width: 5px;
 	height: 128px;
@@ -24,17 +24,17 @@
 	transition: transform 0.3s ease-in-out;
 }
 
-.dashboard-layout.light .main .indicator
+.dashboard-layout.light .main .sidebar .indicator
 {
 	background-color: var(--dark-C20);
 }
 
-.dashboard-layout.dark .main .indicator
+.dashboard-layout.dark .main .sidebar .indicator
 {
 	background-color: var(--white-C20);
 }
 
-.dashboard-layout .main .content
+.dashboard-layout .main .sidebar .content
 {
 	width: calc(365px - (10px + 5px));
 	height: 100%;
@@ -53,7 +53,7 @@
 	transition: transform 0.3s ease-in-out;
 }
 
-.dashboard-layout .main .content:hover
+.dashboard-layout .main .sidebar .content:hover
 {
 	transform: translateX(0);
 	transition: transform 0.3s ease-in-out;
@@ -96,6 +96,7 @@
 		left: 0;
 
 		pointer-events: none;
+		z-index: 1000;
 	}
 
 	.dashboard-layout .main .sidebar .indicator,
@@ -104,7 +105,7 @@
 		pointer-events: auto;
 	}
 	
-	.dashboard-layout .main .indicator
+	.dashboard-layout .main .sidebar .indicator
 	{
 		width: 128px;
 		height: 5px;
@@ -115,9 +116,11 @@
 		left: calc(50% - (128px / 2));
 
 		transform: translateX(0) translateY(350px);
+
+		z-index: 1003;
 	}
 
-	.dashboard-layout .main .content
+	.dashboard-layout .main .sidebar .content
 	{
 		width: calc(100% - 20px);
 		height: 70%;
@@ -129,7 +132,7 @@
 
 		padding: 48px 28px;
 
-		z-index: 9;
+		z-index: 1001;
 
 		transform: translateX(0) translateY(350px);
 	}

@@ -60,8 +60,8 @@ function CommonWrapper({ theme, toggleTheme })
 	
 	return (
 		<>
-			<DesktopAside tabs={tabsData} asideData={asideData} activeTab={activeTab} getIconUrl={getIconUrl} handleNavigation={handleNavigation} handleToggleTheme={handleToggleTheme} handleLogout={handleLogout} theme={theme} />
-			<MobileAside tabs={tabsData} asideData={asideData} activeTab={activeTab} getIconUrl={getIconUrl} handleNavigation={handleNavigation} handleToggleTheme={handleToggleTheme} handleLogout={handleLogout} theme={theme} />
+			<DesktopAside tabs={tabsData} asideData={asideData} activeTab={activeTab} getIconUrl={getIconUrl} handleNavigation={handleNavigation} handleToggleTheme={handleToggleTheme} handleLogout={handleLogout} theme={theme}/>
+			<MobileAside tabs={tabsData} asideData={asideData} activeTab={activeTab} getIconUrl={getIconUrl} handleNavigation={handleNavigation} handleToggleTheme={handleToggleTheme} handleLogout={handleLogout} theme={theme}/>
 
 			<Header asideData={asideData} tabsData={tabsData} activeTab={activeTab} handleNavigation={handleNavigation} handleToggleTheme={handleToggleTheme} handleLogout={handleLogout} getIconUrl={getIconUrl} theme={theme}/>
 		</>

@@ -1,0 +1,138 @@
+.dashboard-layout .home .dashboard-tab .highlights-section .card
+{
+	height: 189px;
+
+	padding: 30px 20px;
+
+	border-radius: 12px;
+}
+
+.dashboard-layout.light .home .dashboard-tab .highlights-section .card
+{
+	background-color: var(--white-C100);
+}
+
+.dashboard-layout.dark .home .dashboard-tab .highlights-section .card    
+{
+	background-color: var(--dark_mode-background);
+}
+
+.dashboard-layout .home .dashboard-tab .highlights-section .card .top
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dashboard-layout .home .dashboard-tab .highlights-section .card .top .icon-wrapper
+{
+	width: 48px;
+	height: 48px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border-radius: 12px;
+}
+
+.dashboard-layout.dark .home .dashboard-tab .highlights-section .card .top .icon-wrapper .icon
+{
+	filter: brightness(0) invert(1);
+}
+
+.dashboard-layout .home .dashboard-tab .highlights-section .card .top .stats
+{
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.dashboard-layout .home .dashboard-tab .highlights-section .card .top .stats .increase
+{
+	color: var(--success-C100);;
+}
+
+.dashboard-layout .home .dashboard-tab .highlights-section .card .top .stats .decrease
+{
+	color: var(--error-C100);
+}
+
+.dashboard-layout .home .dashboard-tab .highlights-section .card .top .stats .percentage
+{
+	font-family: "FC-Bold", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 20px;
+	letter-spacing: 1px;
+}
+
+.dashboard-layout.light .home .dashboard-tab .highlights-section .card .top .stats .percentage
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .home .dashboard-tab .highlights-section .card .top .stats .percentage
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .home .dashboard-tab .highlights-section .card .number
+{
+	margin-top: 15px;
+	margin-bottom: 10px;
+
+	font-family: "FC-Bold", Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	line-height: 36px;
+}
+
+.dashboard-layout.light .home .dashboard-tab .highlights-section .card .number
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .home .dashboard-tab .highlights-section .card .number
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .home .dashboard-tab .highlights-section .card .label
+{
+	margin: 0;
+
+	font-family: "FC-Medium", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.dashboard-layout.light .home .dashboard-tab .highlights-section .card .label
+{
+	color: var(--gray-C100);
+}
+
+.dashboard-layout.dark .home .dashboard-tab .highlights-section .card .label
+{
+	color: var(--dark_mode-text);
+}
+
+@media (max-width: 429px)
+{
+	.dashboard-layout .home .dashboard-tab .highlights-section
+	{
+		width: 100%;
+
+		display: flex;
+		flex-direction: row;
+		gap: 15px;
+		
+		padding: 10px 0;
+
+		overflow-x: auto;
+	}
+	
+	.dashboard-layout .home .dashboard-tab .highlights-section .card
+	{
+		min-width: 200px;
+		flex: 0 0 auto;
+	}
+}

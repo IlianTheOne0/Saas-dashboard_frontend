@@ -8,7 +8,7 @@ import Item from "./components/Item";
 import OnlineItem from "./components/OnlineItem";
 
 import "./assets/styles/Contacts.css";
-import "./assets/styles/CustomScrollbar.css";
+import "../../assets/styles/CustomScrollbar.css";
 
 function Contacts()
 {
