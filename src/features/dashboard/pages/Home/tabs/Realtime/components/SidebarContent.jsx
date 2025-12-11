@@ -106,7 +106,7 @@ function SidebarContent({ data })
 								<div className="device-stat-item" key={index}>
 									<div className="stat-left">
 										<div className="device-icon-box">
-											<img src={stat.name === "Desktop" ? IconDesktop : IconMobile} alt={stat.name} />
+											<img src={stat.name === "Desktop" ? IconDesktop : IconMobile} alt={stat.name}/>
 										</div>
 										<div className="stat-info">
 											<span className="stat-name">{stat.name}</span>

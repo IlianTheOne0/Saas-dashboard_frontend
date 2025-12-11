@@ -26,7 +26,7 @@ function SystemInfoCard({ title, items })
 								<div className="sys-item">
 									<div className="info-row">
 										<div className="left">
-											<img src={getIcon(item.icon)} alt={item.name} className="icon" />
+											<img src={getIcon(item.icon)} alt={item.name} className="icon"/>
 											<span className="name">{item.name}</span>
 										</div>
 										<div className="right">

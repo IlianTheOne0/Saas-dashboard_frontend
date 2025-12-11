@@ -15,12 +15,12 @@ function Realtime()
 	return (
 		<div className="realtime-tab custom-scrollbar">
 			<section className="top-section">
-				<Counter data={mockData.rightNow} />
-				<LocationsMap data={mockData.topLocations} />
+				<Counter data={mockData.rightNow}/>
+				<LocationsMap data={mockData.topLocations}/>
 			</section>
 
 			<section className="chart-section">
-				<PageViewsChart data={mockData.pageViews} />
+				<PageViewsChart data={mockData.pageViews}/>
 			</section>
 
 			<Sidebar>

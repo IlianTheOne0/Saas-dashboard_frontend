@@ -131,7 +131,7 @@ function DonutStatCard({ id, title, data, color })
 				<div className="dropdown-wrapper" ref={dropdownRef}>
 					<div className={`dropdown ${isDropdownOpen ? 'active' : ''}`} onClick={toggleDropdown}>
 						<span>{selectedOption}</span>
-						<img src={ArrowDown} alt="select" style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+						<img src={ArrowDown} alt="select" style={{ transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}/>
 					</div>
 					{
 						isDropdownOpen && 

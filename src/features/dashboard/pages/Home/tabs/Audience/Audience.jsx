@@ -26,7 +26,7 @@ function Audience()
 			</section>
 
 			<section className="locations-section">
-				<LocationsSection mapData={mockData.locations.mapData} listData={mockData.locations.list} />
+				<LocationsSection mapData={mockData.locations.mapData} listData={mockData.locations.list}/>
 			</section>
 
 			<section className="systems-row">
@@ -35,14 +35,14 @@ function Audience()
 					(
 						(sys, index) =>
 						(
-							<SystemInfoCard key={index} title={sys.title} items={sys.items} />
+							<SystemInfoCard key={index} title={sys.title} items={sys.items}/>
 						)
 					)
 				}
 			</section>
 
 			<Sidebar>
-				<SidebarContent data={mockData.sidebar} />
+				<SidebarContent data={mockData.sidebar}/>
 			</Sidebar>
 		</div>
 	);

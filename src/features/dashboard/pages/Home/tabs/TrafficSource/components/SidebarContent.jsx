@@ -137,6 +137,19 @@ function SidebarContent({ data })
 
 	return (
 		<div className="content-wrapper">
+			<section className="section realtime">
+				<h3 className="section-title">Realtime</h3>
+				<div className="realtime-display">
+					<div className="number-block">
+						<span className="big-number">{data.realtime.activeUsers}</span>
+						<span className="sub">Active Users</span>
+					</div>
+					<div id="sidebar-realtime-chart" className="sparkline"></div>
+				</div>
+			</section>
+
+			<div className="divider"/>
+
 			<section className="section audience">
 				<h3 className="section-title">Audience</h3>
 				
@@ -198,19 +211,6 @@ function SidebarContent({ data })
 							}
 						</div>
 					</div>
-				</div>
-			</section>
-
-			<div className="divider"/>
-
-			<section className="section realtime">
-				<h3 className="section-title">Realtime</h3>
-				<div className="realtime-display">
-					<div className="number-block">
-						<span className="big-number">{data.realtime.activeUsers}</span>
-						<span className="sub">Active Users</span>
-					</div>
-					<div id="sidebar-realtime-chart" className="sparkline"></div>
 				</div>
 			</section>
 

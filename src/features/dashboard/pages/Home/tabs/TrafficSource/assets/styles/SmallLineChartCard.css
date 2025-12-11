@@ -1,0 +1,199 @@
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card
+{
+	width: 100%;
+	height: 220px;
+	
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	
+	padding: 24px 32px;
+	
+	border-radius: 12px;
+	
+	z-index: 1;
+}
+
+.dashboard-layout.light .home .traffic-source-tab .small-line-chart-card
+{
+	background-color: var(--white-C100);
+box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.dashboard-layout.dark .home .traffic-source-tab .small-line-chart-card
+{
+	background-color: var(--dark_mode-background);
+}
+
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card .header
+{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	
+	margin-bottom: 10px;
+	
+	z-index: 2;
+}
+
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card .title
+{
+	margin: 0;
+
+	color: inherit;
+	
+	font-family: "FC-Bold", sans-serif;
+	font-size: 16px;
+}
+
+.dashboard-layout.light .home .traffic-source-tab .small-line-chart-card .title
+{
+	color: var(--dark-C100);
+}
+.dashboard-layout.dark .home .traffic-source-tab .small-line-chart-card .title
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card .dropdown-container
+{
+	position: relative;
+	z-index: 3; 
+}
+
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card .dropdown-trigger
+{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	padding: 6px 12px;
+
+	color: var(--gray-C100);
+
+	border: 1px solid var(--gray-C40);
+	border-radius: 6px;
+
+	font-family: "FC-Medium", sans-serif;
+	font-size: 12px;
+
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card .dropdown-trigger:hover
+{
+	background-color: var(--gray-C20);
+	border-color: var(--gray-C80);
+}
+
+.dashboard-layout.dark .home .traffic-source-tab .small-line-chart-card .dropdown-trigger
+{
+	border-color: var(--gray-C60);
+}
+
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card .dropdown-trigger img
+{
+	width: 10px;
+	height: 10px;
+
+	filter: invert(0.6);
+}
+
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card .dropdown-menu
+{
+	width: 130px;
+	
+	position: absolute;
+	top: calc(100% + 5px);
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	
+	padding: 5px;
+	
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	
+	z-index: 5; 
+}
+
+.dashboard-layout.light .home .traffic-source-tab .small-line-chart-card .dropdown-menu
+{
+	background-color: var(--white-C100);
+	border: 1px solid var(--gray-C40);
+}
+
+.dashboard-layout.dark .home .traffic-source-tab .small-line-chart-card .dropdown-menu
+{
+	background-color: var(--dark-C100);
+	border: 1px solid var(--gray-C60);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card .dropdown-item
+{
+	padding: 8px 12px;
+	
+	border-radius: 6px;
+	
+	font-family: "FC-Medium", sans-serif;
+	font-size: 12px;
+	
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.dashboard-layout.light .home .traffic-source-tab .small-line-chart-card .dropdown-item
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.light .home .traffic-source-tab .small-line-chart-card .dropdown-item:hover
+{
+	background-color: var(--gray-C40);
+}
+
+.dashboard-layout.dark .home .traffic-source-tab .small-line-chart-card .dropdown-item
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout.dark .home .traffic-source-tab .small-line-chart-card .dropdown-item:hover
+{
+	background-color: var(--gray-C40);
+}
+
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card .card-value
+{
+	position: relative;
+	
+	margin-top: 10px;
+	
+	font-family: "FC-Bold", sans-serif;
+	font-size: 32px;
+	z-index: 1;
+}
+
+.dashboard-layout.light .home .traffic-source-tab .small-line-chart-card .card-value { color: var(--dark-C100); }
+.dashboard-layout.dark .home .traffic-source-tab .small-line-chart-card .card-value { color: var(--white-C100); }
+
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card .chart-container
+{
+	width: 100%;
+	
+	position: relative;
+	flex: 1;
+	
+	margin-top: 10px;
+	
+	z-index: 0;
+}
+
+.dashboard-layout .home .traffic-source-tab .small-line-chart-card .mini-chart
+{
+	width: 100%;
+	height: 100%;
+}
