@@ -139,7 +139,7 @@ function PageViewsChart({ data })
 			}
 
 			makeSeries("Referral", "referral", "#62CA76", false, true); 
-			makeSeries("Direct", "direct", "#3E6BEC", false, false);    
+			makeSeries("Direct", "direct", "#3E6BEC", false, false);
 			makeSeries("Organic Search", "organic", "#E45851", true, false); 
 
 			chart.appear(1000, 100);

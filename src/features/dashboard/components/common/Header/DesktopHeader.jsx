@@ -11,7 +11,7 @@ const DesktopHeader = memo
 	{
 		const navigate = useNavigate();
 		
-		const handleNavigationToProfile = () => { navigate("/dashboard/profile"); };
+		const handleNavigationToProfile = () => { navigate("/dashboard/settings"); };
 		
 		return (
 			<header className="header desktop-header">

@@ -1,0 +1,149 @@
+.dashboard-layout .email-section
+{
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+
+	padding-top: 32px;
+}
+
+.dashboard-layout .email-section .section-title
+{
+	font-family: "FC-Bold", sans-serif;
+	font-size: 18px;
+
+	margin: 0;
+}
+
+.dashboard-layout.light .email-section .section-title
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .email-section .section-title
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .email-section .form-grid
+{
+	max-width: 500px;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+}
+
+.dashboard-layout .email-section .form-group
+{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.dashboard-layout .email-section .form-group label
+{
+	font-family: "FC-Bold", sans-serif;
+	font-size: 11px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.dashboard-layout.light .email-section .form-group label
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .email-section .form-group label
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .email-section input,
+.dashboard-layout .email-section .input-read-only
+{
+	height: 48px;
+
+	display: flex;
+	align-items: center;
+	
+	padding: 0 16px;
+	
+	font-family: "FC-Regular", sans-serif;
+	font-size: 14px;
+	
+	border-radius: 8px;
+}
+
+.dashboard-layout .email-section input
+{
+	border: 1px solid;
+	background-color: transparent;
+}
+
+.dashboard-layout .email-section .input-read-only
+{
+	background-color: var(--gray-C20);
+	color: var(--gray-C100);
+
+	border: 1px solid transparent;
+
+	cursor: default;
+}
+
+.dashboard-layout.dark .email-section .input-read-only
+{
+	background-color: rgba(255, 255, 255, 0.05);
+	color: var(--dark_mode-text);
+}
+
+.dashboard-layout.light .email-section input
+{
+	border-color: var(--gray-C40);
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.light .email-section input:focus
+{
+	border-color: var(--primary-C100);
+	outline: none;
+}
+
+.dashboard-layout.dark .email-section input
+{
+	border-color: var(--gray-C60);
+	color: var(--white-C100);
+}
+
+.dashboard-layout.dark .email-section input:focus
+{
+	border-color: var(--primary-C100);
+	outline: none;
+}
+
+.dashboard-layout .email-section .btn-success
+{
+	height: 48px;
+	width: 200px;
+
+	background-color: var(--success-C100);
+	color: #FFFFFF;
+	
+	border: none;
+	border-radius: 8px;
+	
+	font-family: "FC-Bold", sans-serif;
+	font-size: 14px;
+	
+	cursor: pointer;
+	transition: opacity 0.2s ease;
+}
+
+.dashboard-layout .email-section .btn-success:hover
+{
+	opacity: 0.9;
+}
+.dashboard-layout .email-section .btn-success:disabled
+{
+	opacity: 0.5; cursor: not-allowed;
+}

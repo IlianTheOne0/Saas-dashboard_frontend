@@ -24,9 +24,9 @@ function Register()
 	const location = useLocation();
 	const navigate = useNavigate();
 	
-	const [name, setName] = useState("User Number 0");
-	const [email, setEmail] = useState(location.state?.email || "wocabe4632@besenica.com");
-	const [password, setPassword] = useState("UserNumber:0");
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState(location.state?.email || "");
+	const [password, setPassword] = useState("");
 
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 

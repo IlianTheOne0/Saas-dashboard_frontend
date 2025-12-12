@@ -26,8 +26,8 @@ function Login()
 	const location = useLocation();
 	const navigate = useNavigate();
 	
-	const [email, setEmail] = useState(location.state?.email || "javib57864@badfist.com");
-	const [password, setPassword] = useState("UserNumber:02");
+	const [email, setEmail] = useState(location.state?.email || "xeyinev887@badfist.com");
+	const [password, setPassword] = useState("UserNumber:05");
 
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
