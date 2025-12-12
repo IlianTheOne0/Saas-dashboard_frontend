@@ -1,0 +1,66 @@
+.dashboard-layout .my-account-tab
+{
+	width: 100%;
+	max-width: 800px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+
+	padding: 20px;
+}
+
+.dashboard-layout .my-account-tab .page-title
+{
+	margin: 0 0 10px 0;
+	
+	font-family: "FC-Bold", sans-serif;
+	font-size: 24px;
+}
+
+.dashboard-layout.light .my-account-tab .page-title
+{
+	color: var(--dark-C100);
+}
+.dashboard-layout.dark .my-account-tab .page-title
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .my-account-tab .btn-success
+{
+	height: 52px;
+	width: 200px;
+
+	background-color: var(--success-C100);
+	color: #FFFFFF;
+
+	border: none;
+	border-radius: 8px;
+
+	font-family: "FC-Bold", sans-serif;
+	font-size: 15px;
+
+	cursor: pointer;
+	transition: opacity 0.2s ease;
+}
+
+.dashboard-layout .my-account-tab .btn-success:hover
+{
+	opacity: 0.9;
+}
+
+.dashboard-layout .my-account-tab .form-footer
+{
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+}
+
+@media (max-width: 428px)
+{
+	.dashboard-layout .my-account-tab
+	{
+		padding-bottom: 150px;
+	}
+}

@@ -1,0 +1,216 @@
+.dashboard-layout .settings-sidebar
+{
+	width: 350px;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	flex-shrink: 0;
+}
+
+.dashboard-layout .settings-sidebar .tabs-list
+{
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.dashboard-layout .settings-sidebar .settings-tab-item
+{
+	width: 100%;
+	height: 80px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	padding: 0 24px;
+
+	border: none;
+	border-radius: 16px;
+
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.dashboard-layout.light .settings-sidebar .settings-tab-item
+{
+	background-color: var(--white-C100);
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .settings-sidebar .settings-tab-item
+{
+	background-color: var(--dark_mode-background);
+	color: var(--white-C100);
+}
+
+.dashboard-layout .settings-sidebar .settings-tab-item:hover
+{
+	transform: translateY(-2px);
+}
+
+.dashboard-layout .settings-sidebar .left-content
+{
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.dashboard-layout .settings-sidebar .icon-box
+{
+	width: 40px;
+	height: 40px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: 12px;
+}
+
+.dashboard-layout .settings-sidebar .tab-icon
+{
+	width: 20px;
+	height: 20px;
+}
+
+.dashboard-layout .settings-sidebar .tab-label
+{
+	font-family: "FC-Bold", Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+.dashboard-layout.light .settings-sidebar .settings-tab-item.active .tab-label
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .settings-sidebar .arrow-icon
+{
+	width: 24px;
+	height: 24px;
+
+	filter: brightness(0) invert(1);
+	opacity: 0.8;
+}
+
+.dashboard-layout.light .settings-sidebar .settings-tab-item:not(.active) .arrow-icon
+{
+	filter: invert(0);
+}
+
+.dashboard-layout .settings-sidebar .settings-tab-item.active
+{
+	background-color: var(--primary-C100); 
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dashboard-layout .settings-sidebar .settings-tab-item.active .icon-box
+{
+	background-color: var(--white-C100);
+}
+
+.dashboard-layout .settings-sidebar .settings-tab-item.active .icon-box .tab-icon
+{
+	filter: invert(1);
+}
+
+.dashboard-layout.light .settings-sidebar .settings-tab-item.active
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .settings-sidebar .settings-tab-item.active
+{
+	color: var(--dark-C100);
+}
+
+.dashboard-layout.dark .settings-sidebar .settings-tab-item .icon-box
+{
+	background-color: var(--dark-C100);
+}
+
+.dashboard-layout.light .settings-sidebar .settings-tab-item .icon-box .tab-icon
+{
+	filter: invert(1);
+}
+
+.dashboard-layout.dark .settings-sidebar .settings-tab-item .icon-box .tab-icon
+{
+	filter: invert(0);
+}
+
+.dashboard-layout.light .settings-sidebar .settings-tab-item:not(.active) .icon-box
+{
+	background-color: var(--gray-C20);
+}
+
+@media (max-width: 429px)
+{
+	.dashboard-layout .settings-sidebar
+	{
+		width: 100%;
+		height: fit-content;
+
+		gap: 15px;
+	}
+
+	.dashboard-layout .settings-sidebar .tabs-list
+	{
+		flex-direction: row;
+		gap: 12px;
+
+		padding-bottom: 10px;
+		
+		overflow-x: auto;
+	}
+
+	.dashboard-layout .settings-sidebar .settings-tab-item
+	{
+		width: auto;
+		height: 56px;
+
+		flex-shrink: 0;
+		
+		padding: 0 16px;
+
+		border-radius: 12px;
+	}
+
+	.dashboard-layout .settings-sidebar .arrow-icon
+	{
+		display: none;
+	}
+
+	.dashboard-layout .settings-sidebar .left-content
+	{
+		gap: 10px;
+	}
+
+	.dashboard-layout .settings-sidebar .icon-box
+	{
+		width: 32px;
+		height: 32px;
+		
+		border-radius: 8px;
+	}
+
+	.dashboard-layout .settings-sidebar .tab-icon
+	{
+		width: 16px;
+		height: 16px;
+	}
+
+	.dashboard-layout .settings-sidebar .tab-label
+	{
+		font-size: 14px;
+		white-space: nowrap;
+	}
+
+	.dashboard-layout .settings-sidebar .settings-tab-item.active
+	{
+		transform: translateY(0);
+	}
+}

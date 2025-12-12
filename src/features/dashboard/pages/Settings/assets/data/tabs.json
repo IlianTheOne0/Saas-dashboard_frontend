@@ -1,0 +1,9 @@
+{
+	"tabs": 
+	[
+		{ "id": 1, "name": "my account", "icon": "user.svg" },
+		{ "id": 3, "name": "security & privacy", "icon": "lock.svg" },
+		{ "id": 5, "name": "theme customization", "icon": "paint.svg" },
+		{ "id": 6, "name": "help", "icon": "help.svg" }
+	]
+}

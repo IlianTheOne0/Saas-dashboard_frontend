@@ -19,9 +19,9 @@ const KAFKA_CONFIG =
 
 	TOPICS_PRODUCER_NAMES:
 	[
-        { name: "auth", topic: "auth-topic" },
-        { name: "user", topic: "user-topic" }
-    ],
+		{ name: "auth", topic: "auth-topic" },
+		{ name: "user", topic: "user-topic" }
+	],
 	TOPICS_CONSUMER_NAMES:
 	[
 		{ name: "auth", topic: "auth-topic-answers" },

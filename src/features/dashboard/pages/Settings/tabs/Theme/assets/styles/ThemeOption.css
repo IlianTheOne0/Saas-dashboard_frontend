@@ -1,0 +1,156 @@
+.dashboard-layout .theme-option
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+
+	cursor: pointer;
+}
+
+.dashboard-layout .theme-option .preview-container
+{
+	width: 200px;
+	height: 140px;
+	
+	display: flex;
+	position: relative;
+	
+	border-radius: 16px;
+	border: 2px solid transparent;
+	
+	box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+	
+	transition: all 0.2s ease;
+	overflow: hidden;
+}
+
+.dashboard-layout .theme-option.light .preview-container
+{
+	background-color: var(--gray-C20);
+}
+
+.dashboard-layout.dark .theme-option.light .preview-container
+{
+	background-color: var(--light_gray-C80);
+}
+
+.dashboard-layout .theme-option.light .preview-sidebar
+{
+	width: 20%;
+	height: 100%;
+	
+	background-color: #FFFFFF;
+}
+
+.dashboard-layout .theme-option.light .preview-content
+{	
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	
+	padding: 10px;
+}
+
+.dashboard-layout .theme-option.light .preview-header
+{
+	width: 100%;
+	height: 10px;
+	
+	background-color: #FFFFFF;
+	
+	border-radius: 4px;
+}
+
+.dashboard-layout .theme-option.light .preview-card
+{
+	width: 100%;
+	height: 20px;
+	
+	background-color: #FFFFFF;
+	
+	border-radius: 4px;
+}
+
+.dashboard-layout .theme-option.dark .preview-container
+{
+	background-color: #1E1F20;
+}
+.dashboard-layout .theme-option.dark .preview-sidebar
+{
+	width: 20%;
+	height: 100%;
+
+	background-color: #35363A;
+}
+.dashboard-layout .theme-option.dark .preview-content
+{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	padding: 10px;
+}
+
+.dashboard-layout .theme-option.dark .preview-header
+{
+	width: 100%;
+	height: 10px;
+
+	background-color: #35363A;
+
+	border-radius: 4px;
+}
+
+.dashboard-layout .theme-option.dark .preview-card
+{
+	width: 100%;
+	height: 20px;
+
+	background-color: #35363A;
+	
+	border-radius: 4px;
+}
+
+.dashboard-layout .theme-option.active .preview-container
+{
+	border-color: var(--primary-C100);
+}
+
+.dashboard-layout .theme-option .check-circle
+{
+	width: 24px;
+	height: 24px;
+
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	background-color: var(--primary-C100);
+	color: #FFFFFF;
+	
+	font-size: 14px;
+	font-weight: bold;
+
+	border-radius: 50%;
+}
+
+.dashboard-layout .theme-option .theme-label
+{
+	font-family: "FC-Medium", sans-serif;
+	font-size: 14px;
+}
+
+.dashboard-layout.light .theme-option .theme-label
+{
+	color: var(--dark-C100);
+}
+.dashboard-layout.dark .theme-option .theme-label
+{
+	color: var(--white-C100);
+}

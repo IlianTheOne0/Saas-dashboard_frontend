@@ -13,7 +13,7 @@ const iv = CryptoJS.enc.Hex.parse(keys.iv);
 function useSecurity()
 {
 	const encryptData = useCallback((plainText) => { return encrypt(key, iv, plainText); }, []);
-    const decryptData = useCallback((cipherText) => { return decrypt(key, iv, cipherText); }, []);
+	const decryptData = useCallback((cipherText) => { return decrypt(key, iv, cipherText); }, []);
 
 	return { encryptData, decryptData };
 }

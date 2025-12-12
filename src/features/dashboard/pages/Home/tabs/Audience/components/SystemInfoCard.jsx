@@ -9,7 +9,7 @@ function SystemInfoCard({ title, items })
 	const getIcon = (name) => 
 	{
 		if(!name) return null;
-		return `https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/features/dashboard_home/src/features/dashboard/pages/Home/tabs/Audience/assets/images/${name}`;
+		return `https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/developer/src/features/dashboard/pages/Home/tabs/Audience/assets/images/${name}`;
 	}
 
 	return (

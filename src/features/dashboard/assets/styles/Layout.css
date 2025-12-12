@@ -33,7 +33,7 @@
 
 .dashboard-layout .main:has(.sidebar .content:hover)
 {
-    padding-right: calc(var(--right-sidebar-width) + var(--page-gap));
+	padding-right: calc(var(--right-sidebar-width) + var(--page-gap));
 }
 
 @media (max-width: 429px)

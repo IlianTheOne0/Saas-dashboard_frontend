@@ -52,7 +52,7 @@ function App()
 								<Route path="calendar" element={<div>Calendar Page</div>}/>
 								<Route path="appointments" element={<div>Timelinechart Page</div>}/>
 								<Route path="contacts" element={<DashboardPages.Contacts/>}/>
-								<Route path="settings" element={<div>Settings Page</div>}/>
+								<Route path="settings" element={<DashboardPages.Settings/>}/>
 							</Route>
 							
 							<Route path="*" element={<NotFound/>}/>
