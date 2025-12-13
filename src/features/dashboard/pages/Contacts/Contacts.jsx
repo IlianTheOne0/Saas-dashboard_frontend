@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { useUser } from "../../../../hooks/useUser";
+import { useUser } from "../../../../hooks/store/useUser";
 import useDebounce from "../../../../hooks/useDebounce";
 
 import Sidebar from "../../components/common/Sidebar/Sidebar";
@@ -12,7 +13,10 @@ import "../../assets/styles/CustomScrollbar.css";
 
 function Contacts()
 {
+	const navigate = useNavigate();
+	
 	const { isLoading, getAllContacts, getPersonalData, starContact } = useUser();
+
 	const [ownerData, setOwnerData] = useState(null);
 	const [contacts, setContacts] = useState({ FavouriteContacts: [], NonFavouriteContacts: [] });
 	const [fetchError, setFetchError] = useState(false);
@@ -145,6 +149,8 @@ function Contacts()
 		[]
 	);
 
+	const handleMessageClick = useCallback((contactId) => { navigate("/dashboard/chat", { state: { contactId } }); }, [navigate]);
+
 	const hasContacts = (displayedContacts.FavouriteContacts?.length > 0) || (displayedContacts.NonFavouriteContacts?.length > 0);
 	const onlineContacts = useMemo
 	(
@@ -193,7 +199,7 @@ function Contacts()
 						(
 							(contact, index) =>
 							(
-								<Item key={`contact-item-${contact.Id || index}`} id={contact.Id || index} className={highlightedId === contact.Id ? "highlighted" : ""} contact={contact} isFavourite={true} onStarClick={handleStarClick}/>
+								<Item key={`contact-item-${contact.Id || index}`} id={contact.Id || index} className={highlightedId === contact.Id ? "highlighted" : ""} contact={contact} isFavourite={true} onStarClick={handleStarClick} onMessageClick={handleMessageClick}/>
 							)
 						)
 					}
@@ -203,7 +209,7 @@ function Contacts()
 						(
 							(contact, index) =>
 							(
-								<Item key={`contact-item-${contact.Id || index}`} id={contact.Id || index} className={highlightedId === contact.Id ? "highlighted" : ""} contact={contact} isFavourite={false} onStarClick={handleStarClick}/>
+								<Item key={`contact-item-${contact.Id || index}`} id={contact.Id || index} className={highlightedId === contact.Id ? "highlighted" : ""} contact={contact} isFavourite={false} onStarClick={handleStarClick} onMessageClick={handleMessageClick}/>
 							)
 						)
 					}

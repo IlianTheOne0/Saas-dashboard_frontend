@@ -1,0 +1,158 @@
+
+.dashboard-layout .chat-sidebar-component
+{
+	width: 320px;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	padding: 20px;
+
+	background-color: var(--white-C100);
+
+	border-radius: 16px;
+
+	transition: background-color 0.2s ease;
+}
+
+.dashboard-layout.dark .chat-sidebar-component
+{
+	background-color: var(--dark_mode-background);
+}
+
+.dashboard-layout .chat-sidebar-component .sidebar-title
+{
+	margin: 0;
+
+	color: var(--dark-C100);
+
+	font-family: "FC-Bold", sans-serif;
+	font-size: 20px;
+}
+
+.dashboard-layout.dark .chat-sidebar-component .sidebar-title
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .chat-sidebar-component .search-input
+{
+	width: 100%;
+	height: 48px;
+
+	padding: 0 15px;
+
+	background-color: transparent;
+	color: var(--dark-C100);
+
+	font-family: "FC-Regular", sans-serif;
+	font-size: 14px;
+
+	border: 1px solid var(--gray-C40);
+	border-radius: 12px;
+	
+	outline: none;
+	transition: border-color 0.2s;
+}
+
+.dashboard-layout.dark .chat-sidebar-component .search-input
+{
+	color: var(--white-C100);
+	border-color: var(--gray-C60);
+}
+
+.dashboard-layout.dark .chat-sidebar-component .search-input::placeholder
+{
+	color: var(--gray-C80);
+}
+
+.dashboard-layout .chat-sidebar-component .contacts-scroller
+{
+	flex: 1;
+	overflow-y: auto;
+}
+
+.dashboard-layout .chat-sidebar-component .contact-list-item
+{
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	
+	padding: 12px;
+
+	border-radius: 12px;
+	
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.dashboard-layout .chat-sidebar-component .contact-list-item:hover,
+.dashboard-layout .chat-sidebar-component .contact-list-item.active
+{
+	background-color: var(--primary-C20);
+}
+
+.dashboard-layout.dark .chat-sidebar-component .contact-list-item:hover,
+.dashboard-layout.dark .chat-sidebar-component .contact-list-item.active
+{
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-layout .chat-sidebar-component .contact-avatar
+{
+	width: 40px;
+	height: 40px;
+
+	flex-shrink: 0;
+
+	border-radius: 12px;
+
+	object-fit: cover;
+}
+
+.dashboard-layout .chat-sidebar-component .contact-name
+{
+	color: var(--dark-C100);
+
+	font-family: "FC-Medium", sans-serif;
+	font-size: 14px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+	overflow: hidden;
+}
+
+.dashboard-layout.dark .chat-sidebar-component .contact-name
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout.dark .dot
+{
+	width: 10px;
+	height: 10px;
+	background-color: var(--error-C100);
+	border-radius: 50%;
+	margin-left: auto;
+	flex-shrink: 0;
+}
+
+@media (max-width: 868px)
+{
+	.dashboard-layout .chat-sidebar-component
+	{
+		width: 100%;
+		height: 100%;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 5;
+		
+		border-radius: 0;
+
+		padding-bottom: 100px;
+	}
+}

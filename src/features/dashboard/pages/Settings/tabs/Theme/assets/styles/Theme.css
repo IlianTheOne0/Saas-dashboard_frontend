@@ -42,7 +42,7 @@
 	flex-wrap: wrap;
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .theme-tab
 	{

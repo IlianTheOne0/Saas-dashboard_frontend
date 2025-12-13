@@ -4,7 +4,7 @@ import { useState, useCallback, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { useKafka } from "../../../hooks/services/useKafka";
-import { useUser } from "../../../hooks/useUser";
+import { useUser } from "../../../hooks/store/useUser";
 
 import CommonInput from "../components/common/CommonInput";
 import CommonButton from "../components/common/CommonButton";

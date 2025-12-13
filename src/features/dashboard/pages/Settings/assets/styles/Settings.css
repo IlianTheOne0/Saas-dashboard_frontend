@@ -47,8 +47,13 @@
 	font-size: 24px;
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
+	.dashboard-layout .settings-page
+	{
+		height: calc(100vh - var(--header-height));
+	}
+
 	.dashboard-layout .settings-page .settings-layout
 	{
 		flex-direction: column;

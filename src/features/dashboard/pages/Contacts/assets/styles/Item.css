@@ -147,7 +147,7 @@
 	transition: opacity 0.2s ease-in-out;
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .contacts .item
 	{

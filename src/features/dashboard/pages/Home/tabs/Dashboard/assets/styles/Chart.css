@@ -112,7 +112,7 @@
 	flex-grow: 1;
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .home .dashboard-tab .chart-container
 	{

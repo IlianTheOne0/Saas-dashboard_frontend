@@ -21,10 +21,10 @@
 	gap: 31px;
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .home .traffic-source-tab .bottom-row
-{
+	{
 		grid-template-columns: 1fr;
 	}
 

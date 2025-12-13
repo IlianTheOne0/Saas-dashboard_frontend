@@ -2,6 +2,7 @@
 {
 	width: 100%;
 	height: 100vh;
+	height: 100dvh;
 }
 
 .dashboard-layout.light
@@ -20,7 +21,8 @@
 	height: 100%;
 
 	position: relative;
-
+	flex: 1;
+	
 	padding-left: calc(var(--nav-width) + var(--page-gap));
 	padding-top: var(--header-height);
 	padding-right: calc(var(--page-gap) + var(--right-sidebar-width-closed));
@@ -36,12 +38,12 @@
 	padding-right: calc(var(--right-sidebar-width) + var(--page-gap));
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .main
 	{
 		width: 100%;
-		height: 100%;
+		height: 100vh;
 
 		padding: 0;
 

@@ -3,7 +3,7 @@ const tabsData = require("../assets/data/tabs.json").tabs;
 import { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
-import { useTheme } from "../../../hooks/useTheme";
+import { useTheme } from "../../../hooks/store/useTheme";
 
 import CommonWrapper from "./common/CommonWrapper";
 

@@ -4,7 +4,7 @@ import * as am5xy from "@amcharts/amcharts5/xy";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
 import ArrowDown from "../../../assets/images/arrow_up-down.svg";
-import { useTheme } from "../../../../../../../hooks/useTheme";
+import { useTheme } from "../../../../../../../hooks/store/useTheme";
 import "../assets/styles/SmallLineChartCard.css";
 
 const FILTER_OPTIONS = ["Today", "Last 7 Days", "Last 2 Weeks", "Last Month"];

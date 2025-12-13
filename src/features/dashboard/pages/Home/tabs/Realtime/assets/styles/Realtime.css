@@ -28,7 +28,7 @@
 	width: 100%;
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .home .realtime-tab
 	{

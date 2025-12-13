@@ -4,7 +4,7 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5percent from "@amcharts/amcharts5/percent";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
-import { useTheme } from "../../../../../../../hooks/useTheme";
+import { useTheme } from "../../../../../../../hooks/store/useTheme";
 import ArrowDown from "../../../assets/images/arrow_up-down.svg";
 
 import "../assets/styles/DonutStatCard.css";

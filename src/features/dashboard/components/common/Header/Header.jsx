@@ -1,6 +1,6 @@
 import { memo, useState, useEffect } from "react";
 
-import { useUser } from "../../../../../hooks/useUser";
+import { useUser } from "../../../../../hooks/store/useUser";
 
 import DesktopHeader from "./DesktopHeader";
 import MobileHeader from "./MobileHeader";

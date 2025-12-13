@@ -80,7 +80,7 @@
 	outline: none;
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .basic-info-form .form-grid
 	{

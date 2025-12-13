@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { UserContext } from "../store/user.context";
+import { UserContext } from "../../store/user.context";
 
 function useUser()
 {

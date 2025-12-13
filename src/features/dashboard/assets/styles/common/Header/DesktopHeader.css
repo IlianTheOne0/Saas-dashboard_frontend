@@ -68,7 +68,7 @@
 	cursor: pointer;
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .main .desktop-header
 	{

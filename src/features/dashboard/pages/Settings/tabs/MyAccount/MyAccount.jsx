@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useUser } from "../../../../../../hooks/useUser";
+import { useUser } from "../../../../../../hooks/store/useUser";
 
 import ProfileSection from "./components/ProfileSection";
 import BasicInfoForm from "./components/BasicInfoForm";
