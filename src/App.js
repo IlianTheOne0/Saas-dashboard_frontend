@@ -53,8 +53,7 @@ function App()
 									<Route path="dashboard" element={<DashboardLayout/>}>
 										<Route path="home" element={<DashboardPages.Home/>}/>
 										<Route path="chat" element={<DashboardPages.Chat/>}/>
-										<Route path="calendar" element={<div>Calendar Page</div>}/>
-										<Route path="appointments" element={<div>Timelinechart Page</div>}/>
+										<Route path="calendar" element={<DashboardPages.Calendar/>}/>
 										<Route path="contacts" element={<DashboardPages.Contacts/>}/>
 										<Route path="settings" element={<DashboardPages.Settings/>}/>
 									</Route>
