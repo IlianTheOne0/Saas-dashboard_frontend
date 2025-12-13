@@ -1,0 +1,39 @@
+.dashboard-layout .message-bubble
+{
+	max-width: 70%;
+
+	padding: 12px 16px;
+	
+	border-radius: 12px;
+
+	font-family: "FC-Medium", sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	word-wrap: break-word;
+}
+
+.dashboard-layout .message-bubble.me
+{
+	align-self: flex-end;
+
+	background-color: var(--primary-C100);
+	color: #ffffff;
+
+	border-bottom-right-radius: 2px;
+}
+
+.dashboard-layout .message-bubble.them
+{
+	align-self: flex-start;
+
+	background-color: var(--gray-C20);
+	color: var(--dark-C100);
+
+	border-bottom-left-radius: 2px;
+}
+
+.dashboard-layout.dark .message-bubble.them
+{
+	background-color: rgba(255, 255, 255, 0.1);
+	color: var(--white-C100);
+}

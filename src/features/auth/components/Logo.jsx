@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { useTheme } from "../../../hooks/useTheme";
+import { useTheme } from "../../../hooks/store/useTheme";
 
 import IconFullLight from "../../../assets/images/icons/logo/icon-full-light.svg"
 import IconFullDark from "../../../assets/images/icons/logo/icon-full-dark.svg"

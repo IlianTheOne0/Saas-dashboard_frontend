@@ -85,7 +85,7 @@
 	transform: translateX(250px) !important;
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .main .sidebar
 	{

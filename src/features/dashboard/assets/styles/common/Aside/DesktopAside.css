@@ -51,7 +51,7 @@
 	border: 2px solid var(--gray-C40);
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .desktop-aside
 	{

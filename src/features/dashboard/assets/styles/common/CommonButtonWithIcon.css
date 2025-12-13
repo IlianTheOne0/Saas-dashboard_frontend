@@ -37,7 +37,7 @@
 	background-color: var(--gray-C20);
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .common-button-with-icon
 	{

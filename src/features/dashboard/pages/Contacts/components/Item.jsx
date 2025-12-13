@@ -5,7 +5,7 @@ import Envelope from "../assets/images/envelope.svg";
 
 import "../assets/styles/Item.css";
 
-function Item({ contact, isFavourite, onStarClick, className, id })
+function Item({ contact, isFavourite, onStarClick, className, id, onMessageClick })
 {
 	return (
 		<div className={`item ${className || ""}`} id={`contact-item-${id || ""}`}>
@@ -15,10 +15,10 @@ function Item({ contact, isFavourite, onStarClick, className, id })
 
 			<div className="info">
 				<p className="name">{contact?.Name}</p>
-				<p className="role">{contact?.Role ?? "No role specified"}</p>
+				<p className="role">{!contact?.Role || !contact.Role?.trim() ? "No role specified" : contact.Role}</p>
 			</div>
 
-			<button className="message-button">
+			<button className="message-button" onClick={() => onMessageClick(contact.Id)}>
 				<img src={Envelope} alt="Envelope"/>
 				Message
 			</button>

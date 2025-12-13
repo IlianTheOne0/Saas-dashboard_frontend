@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useUser } from "../../../../../../hooks/useUser";
+import { useUser } from "../../../../../../hooks/store/useUser";
 
 import PasswordSection from "./components/PasswordSection";
 import EmailSection from "./components/EmailSection";

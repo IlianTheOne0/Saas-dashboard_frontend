@@ -1,0 +1,246 @@
+.dashboard-layout .chat-window-component
+{
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--white-C100);
+	border-radius: 16px;
+
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.dashboard-layout.dark .chat-window-component
+{
+	background-color: var(--dark_mode-background);
+}
+
+.dashboard-layout .chat-window-component.empty
+{
+	justify-content: center;
+	align-items: center;
+}
+
+.dashboard-layout .chat-window-component .empty-text
+{
+	color: var(--dark-C100);
+
+	font-family: "FC-Medium", sans-serif;
+	
+	opacity: 0.5;
+}
+
+.dashboard-layout.dark .chat-window-component .empty-text
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .chat-window-component .header
+{
+	height: 80px;
+	
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	flex-shrink: 0;
+	
+	padding: 0 24px;
+	
+	border-bottom: 1px solid var(--gray-C20);
+}
+
+.dashboard-layout.dark .chat-window-component .header
+{
+	border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-layout .chat-window-component .back-button
+{
+	display: none;
+	
+	margin-right: 8px;
+	padding: 0;
+	
+	background: transparent;
+	color: var(--dark-C100);
+	
+	border: none;
+	
+	font-size: 24px;
+	
+	cursor: pointer;
+}
+
+.dashboard-layout.dark .chat-window-component .back-button
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .chat-window-component .header-avatar
+{
+	width: 40px;
+	height: 40px;
+
+	border-radius: 12px;
+
+	object-fit: cover;
+}
+
+.dashboard-layout .chat-window-component .contact-info-text
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.dashboard-layout .chat-window-component .contact-name-large
+{
+	color: var(--dark-C100);
+
+	font-family: 'FC-Bold', sans-serif;
+	font-size: 16px;
+}
+
+.dashboard-layout.dark .chat-window-component .contact-name-large
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .chat-window-component .status-text
+{
+	font-family: 'FC-Medium', sans-serif;
+	font-size: 12px;
+}
+
+.dashboard-layout .chat-window-component .status-text.online
+{
+	color: var(--success-C100);
+}
+
+.dashboard-layout .chat-window-component .status-text.offline
+{
+	color: var(--gray-C100);
+}
+
+.dashboard-layout .chat-window-component .messages-list
+{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+
+	padding: 24px;
+
+	overflow-y: auto;
+}
+
+.dashboard-layout .chat-window-component .no-messages-placeholder
+{
+	text-align: center;
+	
+	margin-top: 20px;
+	
+	color: var(--dark-C100);
+	
+	font-family: "FC-Regular", sans-serif;
+	
+	opacity: 0.5;
+}
+
+.dashboard-layout.dark .chat-window-component .no-messages-placeholder
+{
+	color: var(--white-C100);
+}
+
+.dashboard-layout .chat-window-component .input-wrapper
+{
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-shrink: 0;
+	
+	padding: 20px;
+	
+	border-top: 1px solid var(--gray-C20);
+}
+
+.dashboard-layout.dark .chat-window-component .input-wrapper
+{
+	border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-layout .chat-window-component .message-input
+{
+	height: 48px;
+	
+	flex: 1;
+	
+	padding: 0 16px;
+
+	background-color: transparent;
+	color: var(--dark-C100);
+	
+	border: 1px solid var(--gray-C40);
+	border-radius: 12px;
+
+	font-family: "FC-Regular", sans-serif;
+	font-size: 14px;
+
+	outline: none;
+}
+
+.dashboard-layout.dark .chat-window-component .message-input
+{
+	color: var(--white-C100);
+	border-color: var(--gray-C60);
+}
+
+.dashboard-layout .chat-window-component .send-button
+{
+	width: 48px;
+	height: 48px;
+
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: var(--primary-C100);
+	color: var(--white-C100);
+
+	font-family: "FC-Bold", sans-serif;
+
+	border: none;
+	border-radius: 12px;
+
+	cursor: pointer;
+	transition: opacity 0.2s;
+}
+
+.dashboard-layout .chat-window-component .send-button:disabled
+{
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+@media (max-width: 868px)
+{
+	.dashboard-layout .chat-window-component
+	{
+		padding-top: 55px;
+		padding-bottom: 100px; 
+	
+		border-radius: 0;
+	}
+
+	.dashboard-layout .chat-window-component .back-button
+	{
+		display: block;
+	}
+
+	.dashboard-layout .chat-window-component .input-wrapper
+	{
+		padding: 10px;
+		padding-bottom: 10px; 
+	}
+}

@@ -4,7 +4,7 @@ const tabsData = require("../../assets/data/tabs.json").tabs;
 import { useState, useEffect, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { useUser } from "../../../../hooks/useUser";
+import { useUser } from "../../../../hooks/store/useUser";
 
 import DesktopAside from "./Aside/DesktopAside";
 import MobileAside from "./Aside/MobileAside";

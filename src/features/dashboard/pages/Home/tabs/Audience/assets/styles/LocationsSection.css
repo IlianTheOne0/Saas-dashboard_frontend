@@ -133,7 +133,7 @@
 	border-radius: 100px;
 }
 
-@media (max-width: 429px)
+@media (max-width: 868px) 
 {
 	.dashboard-layout .home .audience-tab .locations-section-card
 	{

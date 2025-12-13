@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
-import { useTheme } from "../../../hooks/useTheme";
-import { useUser } from "../../../hooks/useUser";
+import { useTheme } from "../../../hooks/store/useTheme";
+import { useUser } from "../../../hooks/store/useUser";
 
 import Background from "./Background";
 
