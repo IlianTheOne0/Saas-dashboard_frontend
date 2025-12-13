@@ -130,7 +130,7 @@ function SidebarContent({ data })
 	const getIcon = (name) =>
 	{
 		if (!name) { return null; }
-		return `https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/features/dashboard_home/src/features/dashboard/pages/Home/tabs/Dashboard/assets/images/${name}`;
+		return `https://raw.githubusercontent.com/IlianTheOne0/Saas-dashboard_frontend/refs/heads/developer/src/features/dashboard/pages/Home/tabs/TrafficSource/assets/images/${name}`;
 	};
 
 	if (!data) { return null; }

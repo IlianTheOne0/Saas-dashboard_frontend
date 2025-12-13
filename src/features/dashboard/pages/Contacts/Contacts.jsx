@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../../../hooks/store/useUser";
 import useDebounce from "../../../../hooks/useDebounce";
 
+import LoadingSpinner from "../../../../components/LoadingSpinner";
 import Sidebar from "../../components/common/Sidebar/Sidebar";
 import Item from "./components/Item";
 import OnlineItem from "./components/OnlineItem";
@@ -173,7 +174,12 @@ function Contacts()
 			</div>
 
 			{
-				isLoading && <p className="loading-message">Loading contacts...</p>
+				isLoading ? 
+				(
+					<div className="loading-wrapper">
+						<LoadingSpinner message="Loading your contacts..." />
+					</div>
+				) : null
 			}
 			{
 				!isLoading && fetchError && 
@@ -219,7 +225,7 @@ function Contacts()
 			<Sidebar className={isSidebarClosed ? "force-close" : ""}>
 				<div className="sidebar-header">
 					<h3>Online Now</h3>
-					{isLoading && <p className="loading-message">Loading statuses...</p>}
+					{isLoading && <LoadingSpinner size="small" message="" />}
 					{!isLoading && onlineContacts.length === 0 && <p className="error-message">No contacts are online.</p>}
 				</div>
 				

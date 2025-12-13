@@ -14,7 +14,7 @@ function Chat()
 {
 	const location = useLocation(); 
 	
-	const { getAllContacts } = useUser();
+	const { getAllContacts, isLoading } = useUser();
 	const { messages, sendMessage, isConnected, currentUserId, unreadSenders, markAsRead, clearActiveChat } = useChat(); 
 
 	const [contacts, setContacts] = useState([]);
@@ -103,7 +103,7 @@ function Chat()
 	return (
 		<div className="chat-container">
 			<div className={`chat-sidebar-wrapper ${selectedContact ? "mobile-hidden" : ""}`}>
-				<ChatSidebar contacts={contacts} selectedContact={selectedContact} onSelectContact={handleSelectContact}unreadSenders={unreadSenders}/>
+				<ChatSidebar contacts={contacts} selectedContact={selectedContact} onSelectContact={handleSelectContact} unreadSenders={unreadSenders} isLoading={isLoading}/>
 			</div>
 
 			<div className={`chat-window-wrapper ${!selectedContact ? "mobile-hidden" : ""}`}>

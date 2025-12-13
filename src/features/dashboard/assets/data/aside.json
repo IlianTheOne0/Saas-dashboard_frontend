@@ -12,9 +12,8 @@
 			{ "id": 1, "iconName": "feed" },
 			{ "id": 2, "iconName": "comment" },
 			{ "id": 3, "iconName": "calendar" },
-			{ "id": 4, "iconName": "timelinechart" },
-			{ "id": 5, "iconName": "user" },
-			{ "id": 6, "iconName": "settings" }
+			{ "id": 4, "iconName": "user" },
+			{ "id": 5, "iconName": "settings" }
 		]
 	},
 	"bottom_items":

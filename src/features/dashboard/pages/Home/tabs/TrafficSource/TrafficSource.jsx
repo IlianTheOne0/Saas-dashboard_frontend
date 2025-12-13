@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { useReports } from "../../../../../../hooks/store/useReports";
 
+import LoadingSpinner from "../../../../../../components/LoadingSpinner";
 import Sidebar from "../../../../components/common/Sidebar/Sidebar";
 import SidebarContent from "./components/SidebarContent";
 import TrafficChannelCard from "./components/TrafficChannelCard";
@@ -8,15 +10,38 @@ import SmallLineChartCard from "./components/SmallLineChartCard";
 import "./assets/styles/TrafficSource.css";
 import "../../../../assets/styles/CustomScrollbar.css";
 
-const mockData = require("./assets/data/mockData.json");
-
 function TrafficSource()
 {
+	const { getTrafficSourceData, isLoading } = useReports();
 	const [data, setData] = useState(null);
 
-	useEffect(() => { setData(mockData); }, []);
+	useEffect
+	(
+		() => 
+		{
+			let isMounted = true;
+			
+			const loadData = async () => 
+			{
+				try { const result = await getTrafficSourceData(); if (isMounted && result?.data) { setData(result.data); } }
+				catch (error) { console.error(error); }
+			};
 
-	if (!data) { return null; }
+			loadData();
+			
+			return () => { isMounted = false; };
+		},
+		[getTrafficSourceData]
+	);
+
+	if (!data) 
+	{ 
+		return (
+			<div className="traffic-source-tab custom-scrollbar">
+				<LoadingSpinner message="Loading Traffic Source Analytics..." />
+			</div>
+		);
+	}
 
 	return (
 		<div className="traffic-source-tab custom-scrollbar">

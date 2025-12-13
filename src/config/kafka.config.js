@@ -20,12 +20,14 @@ const KAFKA_CONFIG =
 	TOPICS_PRODUCER_NAMES:
 	[
 		{ name: "auth", topic: "auth-topic" },
-		{ name: "user", topic: "user-topic" }
+		{ name: "user", topic: "user-topic" },
+		{ name: "reports", topic: "reports-topic" }
 	],
 	TOPICS_CONSUMER_NAMES:
 	[
 		{ name: "auth", topic: "auth-topic-answers" },
-		{ name: "user", topic: "user-topic-answers" }
+		{ name: "user", topic: "user-topic-answers" },
+		{ name: "reports", topic: "reports-topic-answers" }
 	],
 
 	CONSUMER_GROUP: "frontend",

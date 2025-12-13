@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+import { useReports } from "../../../../../../hooks/store/useReports";
+
+import LoadingSpinner from "../../../../../../components/LoadingSpinner";
 import Sidebar from "../../../../components/common/Sidebar/Sidebar";
 import SidebarContent from "./components/SidebarContent";
 import HiglightItem from "./components/HiglightItem";
@@ -7,22 +11,51 @@ import BottomCard from "./components/BottomCard";
 import "./assets/styles/Dashboard.css";
 import "../../../../assets/styles/CustomScrollbar.css";
 
-const mockData = require("./assets/data/mockData.json");
-
 function Dashboard()
 {
+	const { getDashboardData, isLoading } = useReports();
+	const [data, setData] = useState(null);
+
+	useEffect
+	(
+		() => 
+		{
+			let isMounted = true;
+			
+			const loadData = async () => 
+			{
+				try { const result = await getDashboardData(); if (isMounted && result?.data) { setData(result.data); } }
+				catch (error) { console.error(error); }
+			};
+
+			loadData();
+			
+			return () => { isMounted = false; };
+		},
+		[getDashboardData]
+	);
+
+	if (!data) 
+	{ 
+		return (
+			<div className="dashboard-tab custom-scrollbar">
+				<LoadingSpinner message="Loading Dashboard Analytics..." />
+			</div>
+		);
+	}
+
 	return (
 		<div className="dashboard-tab custom-scrollbar">
 			<section className="highlights-section">
 				{
-					mockData.highlights.slice(1).map
+					data.highlights.slice(1).map
 					(
 						(item, index) =>
 						(
 							<>
 								<HiglightItem
 									key={index}
-									bckgColor={item.bckgColor} iconSrc={require(`${mockData.highlights[0].defaultIconPath}${item.iconPath}`)}
+									bckgColor={item.bckgColor} iconSrc={require(`${data.highlights[0].defaultIconPath}${item.iconPath}`)}
 									number={item.value} label={item.title}
 									isIncrease={item.isIncrease} percentage={item.percentage}
 								/>
@@ -33,12 +66,12 @@ function Dashboard()
 			</section>
 
 			<section className="chart-section">
-				<Chart data={mockData.chart}/>
+				<Chart data={data.chart}/>
 			</section>
 
 			<section className="bottom-cards-section">
 				{
-					mockData.bottomCards.map
+					data.bottomCards.map
 					(
 						(card) =>
 						(
@@ -49,7 +82,7 @@ function Dashboard()
 			</section>
 
 			<Sidebar>
-				<SidebarContent data={mockData.sidebar}/>
+				<SidebarContent data={data.sidebar}/>
 			</Sidebar>
 		</div>
 	);

@@ -1,3 +1,7 @@
+import { useEffect, useState } from "react";
+import { useReports } from "../../../../../../hooks/store/useReports";
+
+import LoadingSpinner from "../../../../../../components/LoadingSpinner"
 import Sidebar from "../../../../components/common/Sidebar/Sidebar";
 import SidebarContent from "./components/SidebarContent";
 import DonutStatCard from "./components/DonutStatCard";
@@ -7,15 +11,44 @@ import SystemInfoCard from "./components/SystemInfoCard";
 import "./assets/styles/Audience.css";
 import "../../../../assets/styles/CustomScrollbar.css";
 
-const mockData = require("./assets/data/mockData.json");
-
 function Audience()
 {
+	const { getAudienceData, isLoading } = useReports();
+	const [data, setData] = useState(null);
+
+	useEffect
+	(
+		() => 
+		{
+			let isMounted = true;
+			
+			const loadData = async () => 
+			{
+				try { const result = await getAudienceData(); if (isMounted && result?.data) { setData(result.data); } }
+				catch (error) { console.error(error); }
+			};
+
+			loadData();
+			
+			return () => { isMounted = false; };
+		},
+		[getAudienceData]
+	);
+
+	if (!data) 
+	{ 
+		return (
+			<div className="audience-tab custom-scrollbar">
+				<LoadingSpinner message="Loading Audience Analytics..." />
+			</div>
+		);
+	}
+	
 	return (
 		<div className="audience-tab custom-scrollbar">
 			<section className="stats-row">
 				{
-					mockData.stats.map
+					data.stats.map
 					(
 						(stat) =>
 						(
@@ -26,12 +59,12 @@ function Audience()
 			</section>
 
 			<section className="locations-section">
-				<LocationsSection mapData={mockData.locations.mapData} listData={mockData.locations.list}/>
+				<LocationsSection mapData={data.locations.mapData} listData={data.locations.list}/>
 			</section>
 
 			<section className="systems-row">
 				{
-					mockData.systems.map
+					data.systems.map
 					(
 						(sys, index) =>
 						(
@@ -42,7 +75,7 @@ function Audience()
 			</section>
 
 			<Sidebar>
-				<SidebarContent data={mockData.sidebar}/>
+				<SidebarContent data={data.sidebar}/>
 			</Sidebar>
 		</div>
 	);
